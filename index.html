@@ -2,1956 +2,363 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SurveyMETER | Riset Kebijakan & Survei Longitudinal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurveyMETER | Survei rumah tangga dan data panel Indonesia</title>
+  <meta name="description" content="Lembaga riset di Yogyakarta yang mengumpulkan data rumah tangga Indonesia sejak 2002.">
+  <meta name="theme-color" content="#0A3322">
+  <link rel="icon" href="assets/img/surveymeter-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-page: #FAF8F5;
-      --bg-surface: #FFFFFF;
-      --bg-surface-subtle: #F3EFEA;
-      --brand-green: #0E5E3A;
-      --brand-green-hover: #09472B;
-      --brand-green-light: #EBF7EE;
-      --brand-green-border: #C2E7CA;
-      --text-main: #141A17;
-      --text-muted: #535E57;
-      --text-light: #7E8B83;
-      --border-color: #E6E1D8;
-      --border-subtle: #ECE8E0;
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 22px;
-      --radius-pill: 9999px;
-      --shadow-sm: 0 1px 2px rgba(20, 26, 23, 0.04);
-      --shadow-card: 0 4px 16px rgba(20, 26, 23, 0.05);
-      --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      --font-serif: 'Newsreader', Georgia, serif;
-    }
-
-    *, *::before, *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      font-size: 16px;
-    }
-
-    body {
-      background-color: var(--bg-page);
-      color: var(--text-main);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button {
-      font-family: inherit;
-      cursor: pointer;
-      border: none;
-      background: none;
-    }
-
-    /* Container */
-    .container {
-      width: 100%;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Top Announcement Banner (Osome Style) */
-    .announcement-bar {
-      background-color: var(--brand-green);
-      color: #FFFFFF;
-      font-size: 0.875rem;
-      padding: 10px 16px;
-      position: relative;
-      z-index: 50;
-    }
-    .announcement-bar .inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      text-align: center;
-    }
-    .announcement-badge {
-      background: rgba(255, 255, 255, 0.2);
-      padding: 2px 10px;
-      border-radius: var(--radius-pill);
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.03em;
-      text-transform: uppercase;
-    }
-    .announcement-link {
-      color: #FFFFFF;
-      font-weight: 600;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-      transition: border-color 0.2s;
-    }
-    .announcement-link:hover {
-      border-color: #FFFFFF;
-    }
-
-    /* Sticky Navbar */
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 40;
-      background: rgba(250, 248, 245, 0.94);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      transition: all 0.25s ease;
-    }
-    .nav-wrapper {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      height: 72px;
-    }
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .brand-logo img {
-      height: 42px;
-      width: auto;
-      object-fit: contain;
-    }
-    .brand-tag {
-      display: flex;
-      flex-direction: column;
-      border-left: 1px solid var(--border-color);
-      padding-left: 12px;
-      margin-left: 4px;
-    }
-    .brand-tag-title {
-      font-size: 0.825rem;
-      font-weight: 700;
-      color: var(--brand-green);
-      letter-spacing: 0.02em;
-      line-height: 1.2;
-    }
-    .brand-tag-sub {
-      font-size: 0.7rem;
-      color: var(--text-muted);
-      letter-spacing: 0.02em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      list-style: none;
-    }
-    .nav-link {
-      font-size: 0.925rem;
-      font-weight: 500;
-      color: var(--text-muted);
-      transition: color 0.15s ease;
-      position: relative;
-    }
-    .nav-link:hover, .nav-link.active {
-      color: var(--text-main);
-    }
-    .nav-link.active::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 0;
-      right: 0;
-      height: 2px;
-      background-color: var(--brand-green);
-      border-radius: 2px;
-    }
-
-    .nav-actions {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-    .lang-switcher {
-      display: inline-flex;
-      background: var(--bg-surface-subtle);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-pill);
-      padding: 3px;
-      font-size: 0.775rem;
-      font-weight: 600;
-    }
-    .lang-btn {
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      color: var(--text-muted);
-      transition: all 0.2s;
-    }
-    .lang-btn.active {
-      background: var(--bg-surface);
-      color: var(--brand-green);
-      box-shadow: var(--shadow-sm);
-    }
-
-    /* Buttons (Osome geometry: Pill shaped, strong contrast) */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-weight: 600;
-      border-radius: var(--radius-pill);
-      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-      white-space: nowrap;
-    }
-    .btn-primary {
-      background-color: var(--brand-green);
-      color: #FFFFFF;
-      padding: 12px 24px;
-      font-size: 0.925rem;
-    }
-    .btn-primary:hover {
-      background-color: var(--brand-green-hover);
-      transform: translateY(-1px);
-    }
-    .btn-secondary {
-      background-color: var(--bg-surface);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-      padding: 12px 24px;
-      font-size: 0.925rem;
-    }
-    .btn-secondary:hover {
-      background-color: #F5F2EB;
-      border-color: #D6D0C5;
-      transform: translateY(-1px);
-    }
-    .btn-sm {
-      padding: 8px 16px;
-      font-size: 0.825rem;
-    }
-
-    /* Mobile Menu Toggle */
-    .mobile-menu-toggle {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      width: 24px;
-      cursor: pointer;
-    }
-    .mobile-menu-toggle span {
-      display: block;
-      height: 2px;
-      width: 100%;
-      background: var(--text-main);
-      border-radius: 2px;
-    }
-
-    /* Hero Section (Osome Style with Editorial Research Authority) */
-    .hero {
-      padding: 72px 0 60px;
-      position: relative;
-    }
-    .hero-content {
-      max-width: 860px;
-      margin: 0 auto;
-      text-align: center;
-    }
-    .hero-pretitle {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--brand-green-light);
-      border: 1px solid var(--brand-green-border);
-      color: var(--brand-green);
-      padding: 6px 14px;
-      border-radius: var(--radius-pill);
-      font-size: 0.825rem;
-      font-weight: 600;
-      margin-bottom: 24px;
-    }
-    .hero-pretitle .dot {
-      width: 6px;
-      height: 6px;
-      background: var(--brand-green);
-      border-radius: 50%;
-    }
-    .hero-title {
-      font-size: clamp(2.3rem, 5vw, 3.6rem);
-      font-weight: 700;
-      line-height: 1.18;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-      margin-bottom: 24px;
-    }
-    .hero-title em {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--brand-green);
-      padding: 0 4px;
-    }
-    .hero-desc {
-      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
-      color: var(--text-muted);
-      line-height: 1.65;
-      max-width: 720px;
-      margin: 0 auto 36px;
-    }
-    .hero-cta-group {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      margin-bottom: 56px;
-    }
-
-    /* Metrics Strip */
-    .hero-stats-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 28px 36px;
-      box-shadow: var(--shadow-card);
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 24px;
-      text-align: left;
-    }
-    .stat-item {
-      border-right: 1px solid var(--border-subtle);
-      padding-right: 20px;
-    }
-    .stat-item:last-child {
-      border-right: none;
-      padding-right: 0;
-    }
-    .stat-num {
-      font-size: 2.1rem;
-      font-weight: 800;
-      color: var(--brand-green);
-      line-height: 1.1;
-      letter-spacing: -0.02em;
-      margin-bottom: 6px;
-    }
-    .stat-label {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      line-height: 1.4;
-    }
-
-    /* Partner Credibility Bar */
-    .partners-section {
-      padding: 40px 0 60px;
-      border-bottom: 1px solid var(--border-color);
-    }
-    .partners-title {
-      text-align: center;
-      font-size: 0.825rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--text-light);
-      margin-bottom: 28px;
-    }
-    .partners-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 36px 48px;
-      opacity: 0.85;
-    }
-    .partner-pill {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #3C4740;
-      padding: 8px 18px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-pill);
-      letter-spacing: -0.01em;
-      transition: all 0.2s;
-    }
-    .partner-pill:hover {
-      color: var(--brand-green);
-      border-color: var(--brand-green-border);
-      background: var(--brand-green-light);
-    }
-
-    /* Section Headers */
-    .section-header {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 52px;
-    }
-    .section-kicker {
-      display: inline-block;
-      font-size: 0.8rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--brand-green);
-      margin-bottom: 12px;
-    }
-    .section-title {
-      font-size: clamp(1.8rem, 3.2vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      color: var(--text-main);
-      margin-bottom: 16px;
-    }
-    .section-title em {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--brand-green);
-    }
-    .section-subtitle {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Capabilities (Osome Feature Cards) */
-    .capabilities-section {
-      padding: 88px 0;
-    }
-    .capabilities-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 28px;
-    }
-    .capability-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .capability-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-card);
-      border-color: #D8D2C6;
-    }
-    .capability-top {
-      margin-bottom: 24px;
-    }
-    .capability-tag {
-      display: inline-block;
-      background: var(--brand-green-light);
-      color: var(--brand-green);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 10px;
-      border-radius: var(--radius-pill);
-      margin-bottom: 16px;
-    }
-    .capability-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.3;
-      margin-bottom: 12px;
-      letter-spacing: -0.01em;
-    }
-    .capability-desc {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-    .capability-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-    .capability-bullets li {
-      font-size: 0.875rem;
-      color: var(--text-main);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-    .capability-bullets li::before {
-      content: '✓';
-      color: var(--brand-green);
-      font-weight: 800;
-      margin-top: 1px;
-    }
-    .capability-footer {
-      padding-top: 20px;
-      border-top: 1px solid var(--border-subtle);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .card-link {
-      font-size: 0.875rem;
-      font-weight: 600;
-      color: var(--brand-green);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: gap 0.2s;
-    }
-    .card-link:hover {
-      gap: 10px;
-      color: var(--brand-green-hover);
-    }
-
-    /* Data Publik Hub (Signature Interactive Section) */
-    .data-portal-section {
-      padding: 88px 0;
-      background: #F4EFEA;
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .data-portal-box {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 44px;
-      box-shadow: var(--shadow-card);
-    }
-    .data-portal-header {
-      display: flex;
-      align-items: flex-end;
-      justify-content: space-between;
-      gap: 24px;
-      margin-bottom: 36px;
-      flex-wrap: wrap;
-    }
-    .data-search-wrapper {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      background: var(--bg-page);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-pill);
-      padding: 8px 18px;
-      width: 100%;
-      max-width: 380px;
-    }
-    .data-search-input {
-      border: none;
-      background: transparent;
-      outline: none;
-      font-size: 0.9rem;
-      font-family: inherit;
-      color: var(--text-main);
-      width: 100%;
-    }
-    .data-search-input::placeholder {
-      color: var(--text-light);
-    }
-
-    /* Dataset Cards */
-    .dataset-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 32px;
-    }
-    .dataset-card {
-      background: var(--bg-page);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: border-color 0.2s, background-color 0.2s;
-    }
-    .dataset-card:hover {
-      border-color: var(--brand-green);
-      background-color: #FFFFFF;
-    }
-    .dataset-badge-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .dataset-status {
-      font-size: 0.725rem;
-      font-weight: 700;
-      color: var(--brand-green);
-      background: var(--brand-green-light);
-      padding: 3px 8px;
-      border-radius: var(--radius-pill);
-    }
-    .dataset-year {
-      font-size: 0.75rem;
-      color: var(--text-light);
-      font-weight: 600;
-    }
-    .dataset-name {
-      font-size: 1.15rem;
-      font-weight: 700;
-      color: var(--text-main);
-      line-height: 1.35;
-      margin-bottom: 10px;
-    }
-    .dataset-snippet {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.55;
-      margin-bottom: 18px;
-    }
-    .dataset-meta {
-      font-size: 0.775rem;
-      color: var(--text-muted);
-      border-top: 1px solid var(--border-color);
-      padding-top: 14px;
-      margin-bottom: 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-    }
-    .dataset-meta-item {
-      display: flex;
-      justify-content: space-between;
-    }
-    .dataset-actions {
-      display: flex;
-      gap: 8px;
-    }
-    .btn-dataset {
-      flex: 1;
-      padding: 8px 12px;
-      font-size: 0.8rem;
-      border-radius: var(--radius-pill);
-      font-weight: 600;
-      text-align: center;
-    }
-    .btn-dataset-primary {
-      background: var(--brand-green);
-      color: #FFFFFF;
-    }
-    .btn-dataset-primary:hover {
-      background: var(--brand-green-hover);
-    }
-    .btn-dataset-outline {
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      background: #FFFFFF;
-    }
-    .btn-dataset-outline:hover {
-      background: #EFECE6;
-    }
-
-    /* Publications Section */
-    .publications-section {
-      padding: 88px 0;
-    }
-    .pub-tabs {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
-    .pub-tab-btn {
-      padding: 8px 18px;
-      border-radius: var(--radius-pill);
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      border: 1px solid var(--border-color);
-      background: var(--bg-surface);
-      transition: all 0.2s;
-    }
-    .pub-tab-btn.active, .pub-tab-btn:hover {
-      background: var(--brand-green);
-      color: #FFFFFF;
-      border-color: var(--brand-green);
-    }
-
-    .pub-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-    }
-    .pub-card {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .pub-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-card);
-    }
-    .pub-cover-wrap {
-      height: 220px;
-      background: #F1ECE4;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      border-bottom: 1px solid var(--border-color);
-      position: relative;
-    }
-    .pub-cover-wrap img {
-      max-height: 100%;
-      width: auto;
-      object-fit: contain;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
-      border-radius: 4px;
-    }
-    .pub-body {
-      padding: 24px;
-      display: flex;
-      flex-direction: column;
-      flex: 1;
-      justify-content: space-between;
-    }
-    .pub-date {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--brand-green);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 8px;
-    }
-    .pub-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      line-height: 1.4;
-      color: var(--text-main);
-      margin-bottom: 12px;
-    }
-    .pub-meta {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-      margin-bottom: 16px;
-    }
-    .pub-download-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.825rem;
-      font-weight: 700;
-      color: var(--brand-green);
-      transition: gap 0.2s;
-    }
-    .pub-download-link:hover {
-      gap: 10px;
-      text-decoration: underline;
-    }
-
-    /* Methodology & Rigor Section (Osome "Why Osome" Style) */
-    .rigor-section {
-      padding: 88px 0;
-      background: var(--bg-surface);
-      border-top: 1px solid var(--border-color);
-      border-bottom: 1px solid var(--border-color);
-    }
-    .rigor-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-    .rigor-box {
-      padding: 28px;
-      border-radius: var(--radius-md);
-      background: var(--bg-page);
-      border: 1px solid var(--border-subtle);
-    }
-    .rigor-num {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--brand-green);
-      margin-bottom: 14px;
-      display: inline-block;
-      padding: 4px 12px;
-      background: var(--brand-green-light);
-      border-radius: var(--radius-pill);
-    }
-    .rigor-title {
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: var(--text-main);
-    }
-    .rigor-desc {
-      font-size: 0.9rem;
-      color: var(--text-muted);
-      line-height: 1.6;
-    }
-
-    /* Institutional Profile Section */
-    .about-section {
-      padding: 88px 0;
-    }
-    .about-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 56px;
-      align-items: center;
-    }
-    .about-text h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-      margin-bottom: 20px;
-    }
-    .about-text h3 em {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--brand-green);
-    }
-    .about-text p {
-      font-size: 0.95rem;
-      color: var(--text-muted);
-      line-height: 1.65;
-      margin-bottom: 16px;
-    }
-    .about-timeline {
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 32px;
-    }
-    .timeline-item {
-      position: relative;
-      padding-left: 28px;
-      margin-bottom: 24px;
-    }
-    .timeline-item:last-child {
-      margin-bottom: 0;
-    }
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: 6px;
-      top: 6px;
-      bottom: -24px;
-      width: 2px;
-      background: var(--border-color);
-    }
-    .timeline-item:last-child::before {
-      display: none;
-    }
-    .timeline-node {
-      position: absolute;
-      left: 0;
-      top: 6px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--bg-surface);
-      border: 3px solid var(--brand-green);
-    }
-    .timeline-year {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--brand-green);
-      margin-bottom: 4px;
-    }
-    .timeline-title {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 4px;
-    }
-    .timeline-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* Contact Banner / CTA Strip */
-    .cta-strip {
-      padding: 72px 0;
-      background: var(--brand-green);
-      color: #FFFFFF;
-      text-align: center;
-    }
-    .cta-strip h2 {
-      font-size: 2.2rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin-bottom: 16px;
-    }
-    .cta-strip h2 em {
-      font-family: var(--font-serif);
-      font-weight: 400;
-      font-style: italic;
-    }
-    .cta-strip p {
-      font-size: 1.05rem;
-      opacity: 0.9;
-      max-width: 640px;
-      margin: 0 auto 32px;
-      line-height: 1.6;
-    }
-    .cta-strip-actions {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-    .btn-light {
-      background: #FFFFFF;
-      color: var(--brand-green);
-      font-weight: 700;
-      padding: 14px 30px;
-    }
-    .btn-light:hover {
-      background: #F4FAF5;
-      transform: translateY(-1px);
-    }
-    .btn-ghost-light {
-      background: transparent;
-      color: #FFFFFF;
-      border: 1px solid rgba(255, 255, 255, 0.4);
-      padding: 14px 28px;
-    }
-    .btn-ghost-light:hover {
-      border-color: #FFFFFF;
-      background: rgba(255, 255, 255, 0.08);
-      transform: translateY(-1px);
-    }
-
-    /* Footer */
-    .site-footer {
-      background: #121815;
-      color: #D3DDD7;
-      padding: 68px 0 32px;
-      font-size: 0.875rem;
-    }
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 48px;
-      margin-bottom: 56px;
-    }
-    .footer-col h4 {
-      color: #FFFFFF;
-      font-size: 0.95rem;
-      font-weight: 700;
-      margin-bottom: 18px;
-      letter-spacing: 0.02em;
-    }
-    .footer-col p {
-      color: #9BA8A1;
-      line-height: 1.6;
-      margin-bottom: 14px;
-    }
-    .footer-links {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    .footer-links a {
-      color: #9BA8A1;
-      transition: color 0.15s;
-    }
-    .footer-links a:hover {
-      color: #FFFFFF;
-    }
-    .footer-contact-item {
-      margin-bottom: 10px;
-      color: #9BA8A1;
-    }
-    .footer-contact-item strong {
-      color: #FFFFFF;
-      display: block;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
-    .footer-bottom {
-      border-top: 1px solid #232E29;
-      padding-top: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 0.8rem;
-      color: #798780;
-    }
-    .footer-socials {
-      display: flex;
-      gap: 16px;
-    }
-    .footer-socials a {
-      color: #9BA8A1;
-      transition: color 0.15s;
-    }
-    .footer-socials a:hover {
-      color: #FFFFFF;
-    }
-
-    /* Interactive Data Request Modal */
-    .modal-overlay {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(18, 24, 21, 0.65);
-      backdrop-filter: blur(4px);
-      z-index: 100;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-    }
-    .modal-overlay.active {
-      display: flex;
-    }
-    .modal-box {
-      background: var(--bg-surface);
-      border-radius: var(--radius-lg);
-      max-width: 540px;
-      width: 100%;
-      padding: 36px;
-      position: relative;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-    }
-    .modal-close-btn {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1px solid var(--border-color);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      color: var(--text-muted);
-      transition: all 0.2s;
-    }
-    .modal-close-btn:hover {
-      background: #F4EFEA;
-      color: var(--text-main);
-    }
-    .modal-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: var(--text-main);
-      margin-bottom: 8px;
-    }
-    .modal-desc {
-      font-size: 0.875rem;
-      color: var(--text-muted);
-      margin-bottom: 24px;
-    }
-    .form-group {
-      margin-bottom: 16px;
-      text-align: left;
-    }
-    .form-label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-main);
-      margin-bottom: 6px;
-    }
-    .form-input, .form-select, .form-textarea {
-      width: 100%;
-      padding: 10px 14px;
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-sm);
-      font-family: inherit;
-      font-size: 0.875rem;
-      color: var(--text-main);
-      background: var(--bg-page);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
-      border-color: var(--brand-green);
-      background: #FFFFFF;
-    }
-    .form-textarea {
-      resize: vertical;
-      min-height: 80px;
-    }
-    .modal-submit-btn {
-      width: 100%;
-      margin-top: 10px;
-    }
-    .form-success-msg {
-      display: none;
-      background: var(--brand-green-light);
-      border: 1px solid var(--brand-green-border);
-      color: var(--brand-green);
-      padding: 14px;
-      border-radius: var(--radius-sm);
-      font-size: 0.875rem;
-      font-weight: 600;
-      text-align: center;
-    }
-
-    /* Responsive */
-    @media (max-width: 860px) {
-      .hero-stats-card {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .stat-item:nth-child(2) {
-        border-right: none;
-      }
-      .capabilities-grid {
-        grid-template-columns: 1fr;
-      }
-      .dataset-grid {
-        grid-template-columns: 1fr;
-      }
-      .pub-grid {
-        grid-template-columns: 1fr;
-      }
-      .rigor-grid {
-        grid-template-columns: 1fr;
-      }
-      .about-layout {
-        grid-template-columns: 1fr;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .nav-links {
-        display: none;
-      }
-      .mobile-menu-toggle {
-        display: flex;
-      }
-      .hero {
-        padding: 44px 0 40px;
-      }
-      .hero-stats-card {
-        grid-template-columns: 1fr;
-        padding: 24px;
-      }
-      .stat-item {
-        border-right: none;
-        border-bottom: 1px solid var(--border-subtle);
-        padding-bottom: 16px;
-        margin-bottom: 16px;
-      }
-      .stat-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-      }
-      .data-portal-box {
-        padding: 24px;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=8">
 </head>
 <body>
+  <a class="skip-link" href="#main" data-i18n="skip">Langsung ke konten</a>
 
-  <!-- Top Announcement Bar (Osome Pattern) -->
-  <aside class="announcement-bar">
-    <div class="inner">
-      <span class="announcement-badge">Pembaruan Riset</span>
-      <span>Dataset Longitudinal Penuaan Penduduk (ILAS 2023) telah resmi dirilis untuk periset dan pembuat kebijakan.</span>
-      <a href="#data-publik" class="announcement-link">Akses Portal Data &rarr;</a>
-    </div>
-  </aside>
+  <div class="ribbon">
+    <p class="container">
+      <strong data-i18n="ribbon.lead">Rilis baru:</strong>
+      <span data-i18n="ribbon.text">ILAS 2023, studi penuaan penduduk Indonesia bersama ADB.</span>
+      <a href="#data" data-i18n="ribbon.link">Lihat dataset</a>
+    </p>
+  </div>
 
-  <!-- Sticky Main Header -->
-  <header class="site-header">
-    <div class="container">
-      <div class="nav-wrapper">
-        <a href="#top" class="brand-logo" title="SurveyMETER Indonesia">
-          <svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-  <!-- Emblem: Dynamic scientific measurement swirl -->
-  <g transform="translate(4, 2)">
-    <circle cx="22" cy="22" r="20" fill="#EBF7EE" stroke="#C2E7CA" stroke-width="1.2"/>
-    <!-- Swirl Arcs -->
-    <path d="M 12 28 C 10 18, 18 10, 28 10 C 33 10, 37 13, 39 17 C 35 15, 30 14, 25 16 C 18 19, 15 25, 17 31 C 18 33, 20 35, 22 36 C 18 35, 14 32, 12 28 Z" fill="#0E5E3A"/>
-    <path d="M 15 22 C 16 15, 23 11, 30 13 C 35 15, 38 19, 38 24 C 36 21, 32 18, 27 18 C 21 18, 18 22, 19 27 C 20 30, 23 32, 26 33 C 21 32, 17 28, 15 22 Z" fill="#16A34A"/>
-    <path d="M 22 17 C 25 15, 30 16, 33 19 C 35 22, 35 26, 32 29 C 30 31, 26 31, 23 29 C 21 27, 21 24, 23 21 C 24 19, 27 18, 29 19 C 27 21, 25 24, 26 26 C 27 27, 29 27, 30 26 C 31 24, 30 22, 28 20 C 26 19, 23 18, 22 17 Z" fill="#0E5E3A"/>
-    <circle cx="22" cy="22" r="3.2" fill="#0E5E3A"/>
-  </g>
-  <!-- Wordmark -->
-  <text x="56" y="27" font-family="'Plus Jakarta Sans', Georgia, serif" font-size="20" font-weight="700" fill="#0E5E3A" letter-spacing="-0.02em">Survey<tspan font-weight="800" fill="#141A17">METER</tspan></text>
-  <text x="57" y="38" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="6.5" font-weight="700" fill="#535E57" letter-spacing="0.14em">SURVEY • MEASUREMENT • TRAINING • RESEARCH</text>
-</svg>
-        </a>
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">
+        <img src="assets/img/surveymeter-logo.png" alt="SurveyMETER, ke awal halaman" width="168" height="31">
+      </a>
 
-        <nav>
-          <ul class="nav-links">
-            <li><a href="#fokus" class="nav-link">Fokus Riset</a></li>
-            <li><a href="#data-publik" class="nav-link">Data Publik</a></li>
-            <li><a href="#publikasi" class="nav-link">Publikasi</a></li>
-            <li><a href="#metodologi" class="nav-link">Metodologi</a></li>
-            <li><a href="#profil" class="nav-link">Tentang Kami</a></li>
-          </ul>
-        </nav>
+      <nav class="nav__menu" id="nav-menu" aria-label="Utama">
+        <a href="#data" data-i18n="nav.data">Data publik</a>
+        <a href="#publikasi" data-i18n="nav.pubs">Publikasi</a>
+        <a href="#tentang" data-i18n="nav.about">Tentang</a>
+        <a href="#kontak" data-i18n="nav.contact">Kontak</a>
+      </nav>
 
-        <div class="nav-actions">
-          <div class="lang-switcher">
-            <button class="lang-btn active">ID</button>
-            <button class="lang-btn" onclick="alert('Versi bahasa Inggris dalam proses sinkronisasi.')">EN</button>
-          </div>
-          <button class="btn btn-primary btn-sm" onclick="openDataModal('Permohonan Akses Data')">
-            Permohonan Data
-          </button>
-          <div class="mobile-menu-toggle" onclick="toggleMobileMenu()">
-            <span></span>
-            <span></span>
-          </div>
+      <div class="nav__actions">
+        <div class="lang" role="group" aria-label="Bahasa">
+          <button type="button" class="lang__btn" data-lang="id" aria-pressed="true">ID</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
         </div>
+        <a href="#kontak" class="btn btn--lime nav__cta" data-i18n="nav.cta">Hubungi kami</a>
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span data-i18n="nav.menu">Menu</span>
+        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="top">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-pretitle">
-          <span class="dot"></span>
-          <span>Lembaga Penelitian Independen Terakreditasi - Yogyakarta</span>
-        </div>
-        <h1 class="hero-title">
-          Riset Kebijakan Berbasis Bukti untuk <em>Pembangunan Berkelanjutan</em>
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <h1 class="hero__title">
+          <span data-i18n="hero.l1">Mengukur Indonesia,</span>
+          <span data-i18n="hero.l2">rumah demi rumah.</span>
         </h1>
-        <p class="hero-desc">
-          SurveyMETER mendesain dan mengelola pengumpulan data longitudinal berskala besar, survei sosial-ekonomi rumah tangga, serta analisis dampak kebijakan publik bagi pembuat kebijakan domestik dan institusi internasional sejak 2002.
-        </p>
-        <div class="hero-cta-group">
-          <a href="#data-publik" class="btn btn-primary">
-            Eksplorasi Katalog Data Publik &rarr;
-          </a>
-          <a href="#publikasi" class="btn btn-secondary">
-            Lihat Publikasi &amp; Policy Brief
-          </a>
+        <p class="hero__lead" data-i18n="hero.lead">Lembaga riset di Yogyakarta yang mengumpulkan data panel rumah tangga Indonesia sejak 2002, bersama mitra dalam dan luar negeri.</p>
+        <div class="hero__actions">
+          <a href="#data" class="btn btn--primary btn--lg" data-i18n="hero.cta">Lihat survei kami</a>
+          <a href="#tentang" class="btn btn--outline btn--lg" data-i18n="hero.about">Tentang SurveyMETER</a>
         </div>
 
-        <!-- Metric Strip (Osome Facts & Numbers pattern) -->
-        <div class="hero-stats-card">
-          <div class="stat-item">
-            <div class="stat-num">22+</div>
-            <div class="stat-label">Tahun Dedikasi Riset &amp; Pengumpulan Data Lapangan</div>
+        <div class="showcase">
+          <figure class="show show--photo">
+            <img src="assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto dari sampul laporan ILAS" width="682" height="226">
+            <figcaption class="float-card">
+              <span>ILAS 2023</span>
+              <strong data-i18n="show.ilas">Studi penuaan penduduk bersama Asian Development Bank</strong>
+            </figcaption>
+          </figure>
+          <figure class="show show--map">
+            <figcaption>
+              <span>IFLS East</span>
+              <strong data-i18n="show.ifls">7 provinsi Indonesia Timur</strong>
+            </figcaption>
+            <img src="assets/img/peta.png" alt="Peta Indonesia dengan wilayah survei IFLS East diarsir biru" width="602" height="248">
+          </figure>
+          <figure class="show show--pub">
+            <img src="assets/img/pub_adb_aging.jpg" alt="Sampul laporan Aging Well in Asia" width="120" height="140">
+            <figcaption>
+              <span data-i18n="show.pub">Publikasi, Mei 2024</span>
+              <strong lang="en">Aging Well in Asia: Asian Development Policy Report 2024</strong>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-labelledby="proof-title">
+      <div class="container">
+        <div class="proof__top">
+          <h2 class="proof__title" id="proof-title" data-i18n="proof.title">Bekerja bersama 20 lembaga donor, universitas, dan pemerintah</h2>
+          <div class="marquee">
+            <ul class="marquee__track">
+              <li>The World Bank</li>
+              <li>Asian Development Bank</li>
+              <li>RAND Corporation</li>
+              <li>J-PAL</li>
+              <li>UNICEF</li>
+              <li>Duke University</li>
+              <li>Bappenas</li>
+              <li>TNP2K</li>
+            </ul>
+            <ul class="marquee__track" aria-hidden="true">
+              <li>The World Bank</li>
+              <li>Asian Development Bank</li>
+              <li>RAND Corporation</li>
+              <li>J-PAL</li>
+              <li>UNICEF</li>
+              <li>Duke University</li>
+              <li>Bappenas</li>
+              <li>TNP2K</li>
+            </ul>
           </div>
-          <div class="stat-item">
-            <div class="stat-num">35+</div>
-            <div class="stat-label">Kemitraan Lembaga Internasional &amp; Kementerian</div>
+        </div>
+        <dl class="stats">
+          <div><dt data-i18n="stat.1">tahun lembaga berdiri</dt><dd>2002</dd></div>
+          <div><dt data-i18n="stat.2">provinsi dalam panel IFLS East</dt><dd>7</dd></div>
+          <div><dt data-i18n="stat.3">survei panel utama</dt><dd>3</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="data" id="data" aria-labelledby="data-title">
+      <div class="container">
+        <div class="block">
+          <h2 id="data-title" class="block__title" data-i18n="data.title">Data panel untuk riset dan kebijakan</h2>
+          <p class="block__lead" data-i18n="data.note">Tiga survei panel yang dikerjakan SurveyMETER bersama mitra riset dan donor.</p>
+
+          <div class="dtabs" role="tablist" aria-label="Dataset">
+            <button type="button" role="tab" class="dtab" id="tab-ilas" aria-controls="ilas" aria-selected="true">ILAS 2023</button>
+            <button type="button" role="tab" class="dtab" id="tab-ifls" aria-controls="ifls" aria-selected="false" tabindex="-1">IFLS East</button>
+            <button type="button" role="tab" class="dtab" id="tab-star" aria-controls="star" aria-selected="false" tabindex="-1">STAR Aceh</button>
           </div>
-          <div class="stat-item">
-            <div class="stat-num">100+</div>
-            <div class="stat-label">Survei Longitudinal, Rumah Tangga &amp; Komunitas</div>
+
+          <div class="dpanel" id="ilas" role="tabpanel" aria-labelledby="tab-ilas">
+            <div class="dpanel__text">
+              <h3>Indonesia Longitudinal Aging Survey</h3>
+              <p data-i18n="ilas.desc">Kesehatan fisik dan mental lansia, jejaring keluarga, dan kesiapan ekonomi di hari tua. Dikerjakan bersama Asian Development Bank.</p>
+              <dl class="facts">
+                <div><dt data-i18n="f.contents">Isi</dt><dd data-i18n="ilas.contents">Data mikro, kuesioner, modul pengasuh</dd></div>
+                <div><dt data-i18n="f.status">Status</dt><dd data-i18n="ilas.status">Rilis 2024</dd></div>
+              </dl>
+              <div class="dpanel__actions">
+                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="ILAS 2023" data-i18n="data.ask">Tanyakan survei ini</a>
+              </div>
+            </div>
+            <figure class="dpanel__visual">
+              <img class="dpanel__photo" src="assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto dari sampul laporan ILAS" width="682" height="226" loading="lazy">
+              <figcaption class="float-card">
+                <span data-i18n="f.partner">Mitra</span>
+                <strong>Asian Development Bank</strong>
+              </figcaption>
+            </figure>
           </div>
-          <div class="stat-item">
-            <div class="stat-num">100%</div>
-            <div class="stat-label">Data Primer Presisi dengan Supervisi Bertingkat</div>
+
+          <div class="dpanel" id="ifls" role="tabpanel" aria-labelledby="tab-ifls" hidden>
+            <div class="dpanel__text">
+              <h3 data-i18n="ifls.title">Survei Aspek Kehidupan Rumah Tangga Indonesia Timur</h3>
+              <p data-i18n="ifls.desc">Panel multi-topik tentang rumah tangga dan komunitas di 7 provinsi Indonesia Timur.</p>
+              <dl class="facts">
+                <div><dt data-i18n="f.format">Format</dt><dd>STATA (.dta), SPSS, codebook PDF</dd></div>
+                <div><dt data-i18n="f.access">Akses</dt><dd data-i18n="ifls.access">Terbuka dengan registrasi peneliti</dd></div>
+              </dl>
+              <div class="dpanel__actions">
+                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="IFLS East" data-i18n="data.ask">Tanyakan survei ini</a>
+              </div>
+            </div>
+            <figure class="dpanel__visual dpanel__visual--map">
+              <img src="assets/img/peta.png" alt="Peta Indonesia dengan wilayah survei IFLS East diarsir biru" width="602" height="248" loading="lazy">
+              <figcaption class="float-card">
+                <span data-i18n="f.coverage">Cakupan</span>
+                <strong data-i18n="ifls.coverage">7 provinsi Indonesia Timur</strong>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="dpanel" id="star" role="tabpanel" aria-labelledby="tab-star" hidden>
+            <div class="dpanel__text">
+              <h3 data-i18n="star.title">Studi Pemulihan Pasca Tsunami Aceh</h3>
+              <p data-i18n="star.desc">Pemulihan ekonomi, relokasi rumah, dan ketahanan sosial warga setelah tsunami. Bersama Duke University dan World Bank.</p>
+              <dl class="facts">
+                <div><dt data-i18n="f.design">Desain</dt><dd data-i18n="star.design">Panel beberapa putaran</dd></div>
+                <div><dt data-i18n="f.partner">Mitra</dt><dd>Duke University, World Bank</dd></div>
+              </dl>
+              <div class="dpanel__actions">
+                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="STAR Aceh" data-i18n="data.ask">Tanyakan survei ini</a>
+              </div>
+            </div>
+            <figure class="dpanel__visual dpanel__visual--cover">
+              <img src="assets/img/pub_aceh.jpg" alt="Sampul artikel Mengukur Pemulihan Bencana" width="120" height="140" loading="lazy">
+              <figcaption class="float-card">
+                <span data-i18n="star.related">Publikasi terkait, Des 2023</span>
+                <strong>Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</strong>
+              </figcaption>
+            </figure>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Strategic Partners Section -->
-  <section class="partners-section">
-    <div class="container">
-      <h3 class="partners-title">Dipercaya Oleh Lembaga Kebijakan &amp; Riset Dunia</h3>
-      <div class="partners-grid">
-        <div class="partner-pill">The World Bank</div>
-        <div class="partner-pill">Asian Development Bank (ADB)</div>
-        <div class="partner-pill">BAPPENAS RI</div>
-        <div class="partner-pill">RAND Corporation</div>
-        <div class="partner-pill">J-PAL (Abdul Latif Jameel)</div>
-        <div class="partner-pill">UNICEF</div>
-        <div class="partner-pill">TNP2K</div>
-        <div class="partner-pill">Kementerian Kesehatan RI</div>
-        <div class="partner-pill">Australian National University</div>
-        <div class="partner-pill">Universitas Gadjah Mada</div>
+    <section class="pubs" id="publikasi" aria-labelledby="pubs-title">
+      <div class="container">
+        <div class="pubs__head">
+          <h2 id="pubs-title" data-i18n="pubs.title">Publikasi terbaru</h2>
+          <div class="chips" role="tablist" aria-label="Topik">
+            <button type="button" role="tab" class="chip" aria-selected="true" data-filter="all" data-i18n="tab.all">Semua</button>
+            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="penuaan" data-i18n="tab.aging">Penuaan</button>
+            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="kesehatan" data-i18n="tab.health">Kesehatan</button>
+            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="ekonomi" data-i18n="tab.econ">Ekonomi</button>
+          </div>
+        </div>
+
+        <ol class="cards" id="publist">
+          <li class="pub pub--lead" data-topics="kesehatan">
+            <img src="assets/img/pub_repro.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <time datetime="2024-10-14">14 Okt 2024</time>
+              <h3>Studi Kualitatif Persepsi Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta</h3>
+              <p>Sikoki, Larastiti, Suriastini, Pujiastuti</p>
+            </div>
+          </li>
+          <li class="pub" data-topics="ekonomi">
+            <img src="assets/img/pub_irsa.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <time datetime="2024-07-17">17 Jul 2024</time>
+              <h3 lang="en">COVID-19 Disruption and Regional Development in Small Island Economies</h3>
+              <p>IRSA Conference 2024</p>
+            </div>
+          </li>
+          <li class="pub" data-topics="penuaan ekonomi">
+            <img src="assets/img/pub_nbs.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <time datetime="2024-05-31">31 Mei 2024</time>
+              <h3>Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</h3>
+              <p>SurveyMETER</p>
+            </div>
+          </li>
+          <li class="pub" data-topics="penuaan">
+            <img src="assets/img/pub_adb_aging.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <time datetime="2024-05-15">15 Mei 2024</time>
+              <h3 lang="en">Aging Well in Asia: Asian Development Policy Report 2024</h3>
+              <p data-i18n="pubs.adb">Bersama Asian Development Bank</p>
+            </div>
+          </li>
+          <li class="pub" data-topics="ekonomi">
+            <img src="assets/img/pub_aceh.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <time datetime="2023-12">Des 2023</time>
+              <h3>Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</h3>
+              <p>Jurnal Sustainability</p>
+            </div>
+          </li>
+        </ol>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Research Capabilities (Osome Modular Feature Cards) -->
-  <section class="capabilities-section" id="fokus">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker">Kapabilitas &amp; Layanan</span>
-        <h2 class="section-title">Solusi Menyeluruh dari <em>Perancangan Instrumen</em> hingga Advokasi Kebijakan</h2>
-        <p class="section-subtitle">
-          Kami memadukan standar akademik global dengan kepiawaian logistik lapangan untuk menghasilkan data yang akurat dan dapat diandalkan bagi pengambilan keputusan strategis.
-        </p>
-      </div>
+    <section class="about" id="tentang" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__intro">
+          <h2 id="about-title" data-i18n="about.title">Tentang SurveyMETER</h2>
+          <p data-i18n="about.p1">Nama kami singkatan dari Survey, Measurement, Training, and Research. Lembaga ini dibentuk oleh tim yang lebih dari 15 tahun mengelola pengumpulan data Indonesia Family Life Survey bersama RAND Corporation.</p>
+        </div>
 
-      <div class="capabilities-grid">
-        <!-- Card 1 -->
-        <article class="capability-card">
-          <div class="capability-top">
-            <span class="capability-tag">Survei Panel &amp; Kohor</span>
-            <h3 class="capability-title">Survei Longitudinal Skala Besar</h3>
-            <p class="capability-desc">
-              Pelopor pelaksanaan survei panel multi-topik yang melacak dinamika kesejahteraan, kesehatan, dan ekonomi rumah tangga dari waktu ke waktu secara konsisten.
-            </p>
-            <ul class="capability-bullets">
-              <li>Penerapan metodologi panel internasional berbasis standar IFLS (Indonesia Family Life Survey).</li>
-              <li>Manajemen pelacakan responden (tracking rate) tinggi hingga ke pelosok daerah terpencil.</li>
-              <li>Integrasi modul multi-sektor: pengeluaran, ketenagakerjaan, kesehatan fisik, dan modal sosial.</li>
-            </ul>
-          </div>
-          <div class="capability-footer">
-            <span class="card-link" onclick="openDataModal('Survei Longitudinal')">Diskusikan Kebutuhan Survei &rarr;</span>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="capability-card">
-          <div class="capability-top">
-            <span class="capability-tag">Studi Tematik Unggulan</span>
-            <h3 class="capability-title">Penuaan Penduduk &amp; Perawatan Lansia</h3>
-            <p class="capability-desc">
-              Pusat keunggulan riset demografi penuaan (aging studies) di Asia Tenggara, menginisiasi model perawatan jangka panjang (Long-Term Care) dan Community Care Hub.
-            </p>
-            <ul class="capability-bullets">
-              <li>Inisiator Indonesia Longitudinal Aging Survey (ILAS) bersama Asian Development Bank (ADB).</li>
-              <li>Perancangan dan pengujian uji coba Community Care Hub (CCH) terpadu di Bali dan D.I. Yogyakarta.</li>
-              <li>Penyusunan naskah kebijakan perlindungan sosial dan partisipasi ekonomi produktif lanjut usia.</li>
-            </ul>
-          </div>
-          <div class="capability-footer">
-            <span class="card-link" onclick="openDataModal('Riset Penuaan Penduduk')">Pelajari Inisiatif CCH &rarr;</span>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="capability-card">
-          <div class="capability-top">
-            <span class="capability-tag">Uji Dampak Terukur</span>
-            <h3 class="capability-title">Evaluasi Kebijakan Publik &amp; Sosial</h3>
-            <p class="capability-desc">
-              Mengukur efektivitas dan dampak intervensi program pemerintah, penanggulangan kemiskinan, reformasi jaminan kesehatan, dan ketahanan iklim daerah kepulauan.
-            </p>
-            <ul class="capability-bullets">
-              <li>Metode Randomized Controlled Trials (RCT) dan Quasi-Experimental Evaluation bekerja sama dengan J-PAL.</li>
-              <li>Analisis efisiensi bantuan sosial, perlindungan ibu dan anak, serta pencegahan stunting.</li>
-              <li>Penyusunan Policy Brief ringkas dengan rekomendasi berbasis data kuantitatif dan kualitatif.</li>
-            </ul>
-          </div>
-          <div class="capability-footer">
-            <span class="card-link" onclick="openDataModal('Evaluasi Kebijakan')">Konsultasi Evaluasi Program &rarr;</span>
-          </div>
-        </article>
-
-        <!-- Card 4 -->
-        <article class="capability-card">
-          <div class="capability-top">
-            <span class="capability-tag">Kapasitas Statistik</span>
-            <h3 class="capability-title">Sistem Integrasi Data Daerah &amp; Pelatihan</h3>
-            <p class="capability-desc">
-              Membangun kemandirian data pemerintah daerah dan desa melalui pelatihan kader, standardisasi basis data mikro, dan instrumen pendataan terintegrasi.
-            </p>
-            <ul class="capability-bullets">
-              <li>Program pendampingan sistem integrasi data desa/kelurahan seperti SiTEPAT RAMAH.</li>
-              <li>Pelatihan intensif enumerator, pengawas lapangan, dan koordinator data lokal.</li>
-              <li>Validasi silang data kependudukan mikro untuk ketepatan sasaran bansos daerah.</li>
-            </ul>
-          </div>
-          <div class="capability-footer">
-            <span class="card-link" onclick="openDataModal('Pelatihan & Integrasi Data')">Program Pelatihan Kader &rarr;</span>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Data Publik Hub (Interactive Dataset Catalog - Osome Product Showcase Style) -->
-  <section class="data-portal-section" id="data-publik">
-    <div class="container">
-      <div class="data-portal-box">
-        <div class="data-portal-header">
+        <div class="about__grid">
           <div>
-            <span class="section-kicker">Katalog Repositori Terbuka</span>
-            <h2 class="section-title" style="margin-bottom: 8px;">Portal <em>Data Publik</em> SurveyMETER</h2>
-            <p class="section-subtitle">
-              Akses dataset survei sekunder, kuesioner resmi, dan kamus data untuk keperluan riset ilmiah, tesis, dan analisis kebijakan publik.
-            </p>
+            <h3 class="about__label" data-i18n="leaders.title">Direktur eksekutif</h3>
+            <ul class="leaders">
+              <li><span class="avatar" aria-hidden="true">CS</span><div><strong>Dr. Cecep Sukria Sumantri</strong><span data-i18n="leaders.now">Sejak Februari 2024</span></div></li>
+              <li><span class="avatar" aria-hidden="true">NS</span><div><strong>Dr. Ir. Ni Wayan Suriastini, M.Phil</strong><span>2012 - 2024</span></div></li>
+              <li><span class="avatar" aria-hidden="true">BS</span><div><strong>Bondan S. Sikoki</strong><span>2002 - 2012</span></div></li>
+            </ul>
           </div>
-          <div class="data-search-wrapper">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--text-light);"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            <input type="text" id="datasetSearchInput" class="data-search-input" placeholder="Cari dataset, topik, atau tahun..." oninput="filterDatasets()">
-          </div>
-        </div>
-
-        <div class="dataset-grid" id="datasetGrid">
-          <!-- Dataset 1 -->
-          <div class="dataset-card" data-title="ifls east indonesia timur rumah tangga">
-            <div>
-              <div class="dataset-badge-row">
-                <span class="dataset-status">Tersedia untuk Peneliti</span>
-                <span class="dataset-year">Publikasi 2019</span>
-              </div>
-              <h4 class="dataset-name">Survei Aspek Kehidupan Rumah Tangga Indonesia Timur (IFLS East)</h4>
-              <p class="dataset-snippet">
-                Survei kondisi kehidupan rumah tangga dan komunitas multi-topik berskala besar yang mencakup provinsi-provinsi di kawasan timur Indonesia.
-              </p>
-            </div>
-            <div>
-              <div class="dataset-meta">
-                <div class="dataset-meta-item"><span>Cakupan:</span> <strong>7 Provinsi Timur</strong></div>
-                <div class="dataset-meta-item"><span>Format:</span> <strong>STATA (.dta) / SPSS</strong></div>
-                <div class="dataset-meta-item"><span>Akses:</span> <strong>Terbuka (Registrasi)</strong></div>
-              </div>
-              <div class="dataset-actions">
-                <button class="btn btn-dataset btn-dataset-primary" onclick="openDataModal('IFLS East')">Unduh Metadata</button>
-                <button class="btn btn-dataset btn-dataset-outline" onclick="openDataModal('IFLS East (Data Penuh)')">Minta Akses</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dataset 2 -->
-          <div class="dataset-card" data-title="ilas 2023 indonesia longitudinal aging survey lansia adb">
-            <div>
-              <div class="dataset-badge-row">
-                <span class="dataset-status">Dataset Unggulan Baru</span>
-                <span class="dataset-year">Rilis 2024</span>
-              </div>
-              <h4 class="dataset-name">Indonesia Longitudinal Aging Survey (ILAS) 2023</h4>
-              <p class="dataset-snippet">
-                Data komprehensif penuaan penduduk: kesehatan fisik-mental, jejaring dukungan keluarga, kesiapan ekonomi, dan perlindungan jangka panjang lansia bekerja sama dengan Asian Development Bank (ADB).
-              </p>
-            </div>
-            <div>
-              <div class="dataset-meta">
-                <div class="dataset-meta-item"><span>Sampel:</span> <strong>Lansia &amp; Pengasuh</strong></div>
-                <div class="dataset-meta-item"><span>Kemitraan:</span> <strong>ADB &amp; Bappenas</strong></div>
-                <div class="dataset-meta-item"><span>Format:</span> <strong>Kuesioner &amp; Dataset</strong></div>
-              </div>
-              <div class="dataset-actions">
-                <button class="btn btn-dataset btn-dataset-primary" onclick="openDataModal('ILAS 2023')">Unduh Codebook</button>
-                <button class="btn btn-dataset btn-dataset-outline" onclick="openDataModal('ILAS 2023 (Dataset Lengkap)')">Minta Akses</button>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dataset 3 -->
-          <div class="dataset-card" data-title="tsunami aceh pemulihan bencana longitudinal star">
-            <div>
-              <div class="dataset-badge-row">
-                <span class="dataset-status">Arsip Longitudinal</span>
-                <span class="dataset-year">Long-term Panel</span>
-              </div>
-              <h4 class="dataset-name">Studi Tahap Pemulihan Wilayah Pasca Tsunami Aceh</h4>
-              <p class="dataset-snippet">
-                Survei longitudinal multi-putaran untuk mengukur dampak jangka panjang rekonstruksi sosial, perumahan, pemulihan ekonomi, dan ketahanan psikososial pasca bencana tsunami Aceh.
-              </p>
-            </div>
-            <div>
-              <div class="dataset-meta">
-                <div class="dataset-meta-item"><span>Fokus:</span> <strong>Rekonstruksi &amp; Dampak</strong></div>
-                <div class="dataset-meta-item"><span>Kolaborasi:</span> <strong>Duke &amp; World Bank</strong></div>
-                <div class="dataset-meta-item"><span>Status:</span> <strong>Katalog Terverifikasi</strong></div>
-              </div>
-              <div class="dataset-actions">
-                <button class="btn btn-dataset btn-dataset-primary" onclick="openDataModal('Studi Tsunami Aceh')">Unduh Laporan</button>
-                <button class="btn btn-dataset btn-dataset-outline" onclick="openDataModal('Studi Aceh (Dataset)')">Minta Akses</button>
-              </div>
-            </div>
+          <div>
+            <h3 class="about__label" data-i18n="tl.title">Perjalanan</h3>
+            <ol class="timeline">
+              <li><strong>2002</strong><p data-i18n="tl.1">Yayasan SurveyMETER berdiri di Yogyakarta pada 20 Februari.</p></li>
+              <li><strong>2011</strong><p data-i18n="tl.2">Menguatkan peran sebagai lembaga penelitian dan advokasi kebijakan publik.</p></li>
+              <li><strong>2020</strong><p data-i18n="tl.3">Menjadi PT SurveyMETER untuk memperluas kemitraan riset internasional.</p></li>
+            </ol>
           </div>
         </div>
 
-        <div style="text-align: center; padding-top: 10px;">
-          <p style="font-size: 0.875rem; color: var(--text-muted); margin-bottom: 12px;">
-            Memerlukan dataset spesifik atau data mikro khusus untuk riset kolaboratif?
-          </p>
-          <button class="btn btn-secondary btn-sm" onclick="openDataModal('Permohonan Dataset Kustom')">
-            Kirim Pengajuan Kustom ke Tim Manajemen Data &rarr;
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Publications & Policy Briefs Section -->
-  <section class="publications-section" id="publikasi">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker">Diseminasi Hasil Riset</span>
-        <h2 class="section-title">Publikasi Akademik &amp; <em>Naskah Kebijakan</em></h2>
-        <p class="section-subtitle">
-          Temuan empiris tim peneliti SurveyMETER yang diterbitkan di jurnal internasional terindeks, buku rujukan kebijakan, dan seri laporan kerja sama donor.
-        </p>
-      </div>
-
-      <div class="pub-tabs">
-        <button class="pub-tab-btn active" onclick="filterPubs('all', this)">Semua Publikasi</button>
-        <button class="pub-tab-btn" onclick="filterPubs('aging', this)">Penuaan &amp; Demografi</button>
-        <button class="pub-tab-btn" onclick="filterPubs('health', this)">Kesehatan &amp; Sosial</button>
-        <button class="pub-tab-btn" onclick="filterPubs('economy', this)">Ekonomi &amp; Wilayah</button>
-      </div>
-
-      <div class="pub-grid">
-        <!-- Pub 1 -->
-        <article class="pub-card" data-category="health">
-          <div class="pub-cover-wrap">
-            <img src="data:image/jpeg;base64,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" alt="Perceptions of Adolescents Sexual and Reproductive Health">
-          </div>
-          <div class="pub-body">
+        <div class="partners">
+          <h3 class="about__label" data-i18n="partners.title">Pernah bekerja bersama</h3>
+          <div class="partners__grid">
             <div>
-              <div class="pub-date">14 Oktober 2024</div>
-              <h4 class="pub-title">Studi Kualitatif Persepsi Pendidikan Seks &amp; Kesehatan Reproduksi Remaja di Yogyakarta</h4>
-              <p class="pub-meta">Peneliti: Sikoki, Larastiti, Suriastini, Pujiastuti. Menelaah kesenjangan pemahaman dan akses konseling reproduksi remaja di tingkat komunitas sekolah dan keluarga.</p>
+              <h4 data-i18n="partners.g1">Donor dan multilateral</h4>
+              <p>The World Bank, Asian Development Bank, UNICEF, UNDP, AusAID / Prospera</p>
             </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: Kesehatan Reproduksi Remaja')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Pub 2 -->
-        <article class="pub-card" data-category="economy">
-          <div class="pub-cover-wrap">
-            <img src="data:image/jpeg;base64,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" alt="COVID-19 Disruption and Regional Development">
-          </div>
-          <div class="pub-body">
             <div>
-              <div class="pub-date">17 Juli 2024</div>
-              <h4 class="pub-title">COVID-19 Disruption and Regional Development in Small Island Economies</h4>
-              <p class="pub-meta">Konferensi Internasional IRSA 2024. Analisis pemulihan ekonomi wilayah kepulauan kecil di Indonesia pasca guncangan pandemi.</p>
+              <h4 data-i18n="partners.g2">Riset dan universitas</h4>
+              <p>RAND Corporation, J-PAL, Innovations for Poverty Action, Duke University, Australian National University, University of Melbourne, University of Sydney, UCLA, Hitotsubashi University</p>
             </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: IRSA Small Island Economies')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Pub 3 -->
-        <article class="pub-card" data-category="aging">
-          <div class="pub-cover-wrap">
-            <img src="data:image/jpeg;base64,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" alt="Asian Development Policy Report 2024">
-          </div>
-          <div class="pub-body">
             <div>
-              <div class="pub-date">15 Mei 2024</div>
-              <h4 class="pub-title">Aging Well in Asia: Asian Development Policy Report 2024</h4>
-              <p class="pub-meta">Bekerja sama dengan Asian Development Bank (ADB). Laporan kebijakan regional terkait strategi kesiapan perlindungan sosial menghadapi lonjakan populasi lanjut usia.</p>
+              <h4 data-i18n="partners.g3">Pemerintah</h4>
+              <p>Bappenas, TNP2K, Kementerian Kesehatan, BNPB, Kementerian Pendidikan, Pemerintah Daerah DIY</p>
             </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: Aging Well in Asia (ADB)')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Pub 4 -->
-        <article class="pub-card" data-category="aging">
-          <div class="pub-cover-wrap">
-            <img src="data:image/jpeg;base64,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" alt="Enhancing Decent Work in Nature-based Solutions">
-          </div>
-          <div class="pub-body">
-            <div>
-              <div class="pub-date">31 Mei 2024</div>
-              <h4 class="pub-title">Mengangkat Kerja Layak bagi Lanjut Usia dalam Solusi Berbasis Alam di Indonesia</h4>
-              <p class="pub-meta">Kajian potensi pekerjaan layak dan partisipasi ekonomi inklusif bagi kelompok usia lanjut di sektor restorasi ekosistem pedesaan.</p>
-            </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: Kerja Layak Lansia')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Pub 5 -->
-        <article class="pub-card" data-category="economy">
-          <div class="pub-cover-wrap">
-            <img src="data:image/jpeg;base64,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" alt="Sustainability Report Aceh Tsunami Recovery">
-          </div>
-          <div class="pub-body">
-            <div>
-              <div class="pub-date">18 Desember 2023</div>
-              <h4 class="pub-title">Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</h4>
-              <p class="pub-meta">Jurnal Sustainability. Evaluasi efektivitas bantuan perumahan dan rekonstruksi infrastruktur dasar dalam memulihkan penghidupan masyarakat pesisir.</p>
-            </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: Evaluasi Pemulihan Bencana Aceh')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-
-        <!-- Pub 6 -->
-        <article class="pub-card" data-category="health">
-          <div class="pub-cover-wrap" style="background: #E8F0EA;">
-            <div style="text-align: center; padding: 20px;">
-              <div style="font-size: 0.8rem; font-weight: 700; color: var(--brand-green); margin-bottom: 6px;">POLICY PAPER</div>
-              <div style="font-size: 1.1rem; font-weight: 800; color: var(--text-main);">Gerakan Jogja Sapa Lansia</div>
-              <div style="font-size: 0.75rem; color: var(--text-muted); margin-top: 8px;">Dinsosnakertrans Kota Yogyakarta</div>
-            </div>
-          </div>
-          <div class="pub-body">
-            <div>
-              <div class="pub-date">04 Oktober 2024</div>
-              <h4 class="pub-title">Pedoman Operasional Gerakan Jogja Sapa Lansia Dinsosnakertrans</h4>
-              <p class="pub-meta">Pendampingan perumusan panduan intervensi kunjungan sosial, skrining kesehatan mandiri lansia, dan aktivasi kader peduli lansia di Kota Yogyakarta.</p>
-            </div>
-            <a href="javascript:void(0)" onclick="openDataModal('Publikasi: Pedoman Jogja Sapa Lansia')" class="pub-download-link">
-              Lihat Ringkasan Eksekutif &rarr;
-            </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Rigor & Field Protocols (Osome "What sets us apart" Style) -->
-  <section class="rigor-section" id="metodologi">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-kicker">Integritas Metodologi</span>
-        <h2 class="section-title">Standar Kualitas Data <em>Tanpa Kompromi</em></h2>
-        <p class="section-subtitle">
-          Integritas temuan kebijakan bertumpu pada kualitas data mentah di lapangan. Kami menerapkan protokol kendali mutu berlapis di setiap tahapan pendataan.
-        </p>
-      </div>
-
-      <div class="rigor-grid">
-        <div class="rigor-box">
-          <span class="rigor-num">01</span>
-          <h3 class="rigor-title">Verifikasi Bertingkat 100% Real-Time</h3>
-          <p class="rigor-desc">
-            Setiap kuesioner yang diisi enumerator diperiksa silang oleh pengawas tim di hari yang sama melalui Computer-Assisted Personal Interviewing (CAPI) dengan deteksi anomali otomatis.
-          </p>
-        </div>
-
-        <div class="rigor-box">
-          <span class="rigor-num">02</span>
-          <h3 class="rigor-title">Audit Geotagging &amp; Kunjungan Ulang</h3>
-          <p class="rigor-desc">
-            Verifikasi fisik lokasi responden dengan koordinat GPS dan re-interview acak independen (back-check) sebesar 10-15% dari total sampel guna mencegah fabrikasi jawaban.
-          </p>
-        </div>
-
-        <div class="rigor-box">
-          <span class="rigor-num">03</span>
-          <h3 class="rigor-title">Kepatuhan Etik &amp; Kerahasiaan Responden</h3>
-          <p class="rigor-desc">
-            Persetujuan tindakan medis/survei (informed consent) terstandarisasi, anonimisasi identitas, dan enkripsi data berlapis sesuai etika penelitian nasional dan internasional.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About & Leadership Section -->
-  <section class="about-section" id="profil">
-    <div class="container">
-      <div class="about-layout">
-        <div class="about-text">
-          <span class="section-kicker">Tentang Lembaga</span>
-          <h3>Dua Dekade Menjembatani <em>Data Lapangan</em> dan Kebijakan Publik</h3>
-          <p>
-            SurveyMETER didirikan pada tanggal 20 Februari 2002 di Yogyakarta sebagai yayasan penelitian yang awalnya meresmikan hubungan kerja staf peneliti yang telah berpengalaman lebih dari 15 tahun mengumpulkan data Indonesia Family Life Survey (IFLS) bersama RAND Corporation.
-          </p>
-          <p>
-            Pada tahun 2011, lembaga menguatkan komitmen pada pendampingan advokasi kebijakan sosial. Sejak 2020, bertransformasi menjadi PT SurveyMETER guna memperluas jangkauan kolaborasi profesional internasional dengan tetap memegang teguh independensi ilmiah.
-          </p>
-          <p>
-            Kiprah lembaga dipimpin berturut-turut oleh Bondan S. Sikoki (2002-2012), Dr. Ir. Ni Wayan Suriastini, M.Phil (2012-2024), dan kini dipimpin oleh <strong>Dr. Cecep Sukria Sumantri</strong> sebagai Direktur Eksekutif.
-          </p>
-          <div style="margin-top: 28px;">
-            <button class="btn btn-primary" onclick="openDataModal('Profil Lembaga & Kolaborasi')">
-              Jajaki Kolaborasi Penelitian &rarr;
-            </button>
-          </div>
-        </div>
-
-        <div class="about-timeline">
-          <div class="timeline-item">
-            <span class="timeline-node"></span>
-            <div class="timeline-year">2002</div>
-            <div class="timeline-title">Pendirian SurveyMETER di Yogyakarta</div>
-            <div class="timeline-desc">Merangkul para staf peneliti berpengalaman IFLS RAND untuk menyediakan data primer berkualitas tinggi bagi kebijakan publik Indonesia.</div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-node"></span>
-            <div class="timeline-year">2011</div>
-            <div class="timeline-title">Transformasi Lembaga Penelitian &amp; Advokasi</div>
-            <div class="timeline-desc">Fokus diperluas mencakup evaluasi program pemerintah, perlindungan lansia, dan perbaikan gizi masyarakat bersama kementerian terkait.</div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-node"></span>
-            <div class="timeline-year">2020</div>
-            <div class="timeline-title">PT SurveyMETER &amp; Ekspansi Global</div>
-            <div class="timeline-desc">Penguatan tata kelola profesional dan peluncuran riset longitudinal penuaan (ILAS) bekerja sama erat dengan Asian Development Bank.</div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-node"></span>
-            <div class="timeline-year">2024 - Sekarang</div>
-            <div class="timeline-title">Era Kepemimpinan Baru &amp; Repositori Digital</div>
-            <div class="timeline-desc">Di bawah Dr. Cecep Sukria Sumantri, SurveyMETER mempercepat modernisasi diseminasi data publik dan asistensi sistem data daerah.</div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CTA Banner Section -->
-  <section class="cta-strip">
-    <div class="container">
-      <h2>Mulai Riset Berkualitas Bersama <em>SurveyMETER</em></h2>
-      <p>
-        Apakah institusi Anda membutuhkan desain survei sampel acak berskala nasional, pengumpulan data lapangan dengan kendali mutu ketat, atau analisis kebijakan publik berbasis bukti?
-      </p>
-      <div class="cta-strip-actions">
-        <button class="btn btn-light" onclick="openDataModal('Konsultasi Kemitraan Baru')">
-          Hubungi Tim Peneliti &rarr;
-        </button>
-        <a href="#data-publik" class="btn btn-ghost-light">
-          Jelajahi Data Publik
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Site Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div class="footer-col">
-          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
-            <svg width="240" height="48" viewBox="0 0 240 48" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
-  <!-- Emblem: Dynamic scientific measurement swirl -->
-  <g transform="translate(4, 2)">
-    <circle cx="22" cy="22" r="20" fill="#EBF7EE" stroke="#C2E7CA" stroke-width="1.2"/>
-    <!-- Swirl Arcs -->
-    <path d="M 12 28 C 10 18, 18 10, 28 10 C 33 10, 37 13, 39 17 C 35 15, 30 14, 25 16 C 18 19, 15 25, 17 31 C 18 33, 20 35, 22 36 C 18 35, 14 32, 12 28 Z" fill="#34D399"/>
-    <path d="M 15 22 C 16 15, 23 11, 30 13 C 35 15, 38 19, 38 24 C 36 21, 32 18, 27 18 C 21 18, 18 22, 19 27 C 20 30, 23 32, 26 33 C 21 32, 17 28, 15 22 Z" fill="#16A34A"/>
-    <path d="M 22 17 C 25 15, 30 16, 33 19 C 35 22, 35 26, 32 29 C 30 31, 26 31, 23 29 C 21 27, 21 24, 23 21 C 24 19, 27 18, 29 19 C 27 21, 25 24, 26 26 C 27 27, 29 27, 30 26 C 31 24, 30 22, 28 20 C 26 19, 23 18, 22 17 Z" fill="#34D399"/>
-    <circle cx="22" cy="22" r="3.2" fill="#34D399"/>
-  </g>
-  <!-- Wordmark -->
-  <text x="56" y="27" font-family="'Plus Jakarta Sans', Georgia, serif" font-size="20" font-weight="700" fill="#34D399" letter-spacing="-0.02em">Survey<tspan font-weight="800" fill="#FFFFFF">METER</tspan></text>
-  <text x="57" y="38" font-family="'Plus Jakarta Sans', -apple-system, sans-serif" font-size="6.5" font-weight="700" fill="#9BA8A1" letter-spacing="0.14em">SURVEY • MEASUREMENT • TRAINING • RESEARCH</text>
-</svg>
-          </div>
-          <p>
-            Survey, Measurement, Training and Research. Lembaga penelitian independen di Yogyakarta yang berdedikasi menyediakan informasi akurat dan data terpercaya bagi kebijakan publik yang sehat dan berkelanjutan.
-          </p>
-          <p style="font-size: 0.8rem; color: #73827A;">
-            Badan Hukum: Terdaftar Kemenkumham RI.
-          </p>
-        </div>
-
-        <div class="footer-col">
-          <h4>Fokus &amp; Program</h4>
-          <ul class="footer-links">
-            <li><a href="#fokus">Survei Longitudinal</a></li>
-            <li><a href="#fokus">Kajian Penuaan &amp; CCH</a></li>
-            <li><a href="#fokus">Evaluasi Kebijakan Publik</a></li>
-            <li><a href="#fokus">Integrasi Data Desa</a></li>
-            <li><a href="#data-publik">IFLS East &amp; ILAS</a></li>
+    <section class="cta" id="kontak" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="block block--cta">
+          <h2 id="cta-title" class="block__title" data-i18n="cta.title">Hubungi SurveyMETER</h2>
+          <p class="block__lead" data-i18n="cta.lead">Untuk kerja sama riset, pertanyaan soal data, atau publikasi, hubungi kantor kami di Yogyakarta.</p>
+          <ul class="contact">
+            <li><span>Email</span><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></li>
+            <li><span data-i18n="cta.phone">Telepon</span><a href="tel:+622744477464">+62 274 4477-464</a></li>
+            <li><span data-i18n="cta.office">Kantor</span><address>Jl. Jenengan Raya No. 109, Maguwoharjo, Sleman, Yogyakarta</address></li>
           </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Tautan Cepat</h4>
-          <ul class="footer-links">
-            <li><a href="#profil">Tentang SurveyMETER</a></li>
-            <li><a href="#publikasi">Publikasi &amp; Policy Brief</a></li>
-            <li><a href="#metodologi">Protokol Kendali Mutu</a></li>
-            <li><a href="javascript:void(0)" onclick="openDataModal('Karir & Rekrutmen Enumerator')">Peluang Enumerator</a></li>
-            <li><a href="#data-publik">Permohonan Data Sekunder</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Kantor Utama Yogyakarta</h4>
-          <div class="footer-contact-item">
-            <strong>Alamat:</strong>
-            Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282
-          </div>
-          <div class="footer-contact-item">
-            <strong>Telepon &amp; Fax:</strong>
-            Tel: +62 274 4477-464 | Fax: +62 274 4477-004
-          </div>
-          <div class="footer-contact-item">
-            <strong>Surat Elektronik:</strong>
-            sm@surveymeter.org
+          <div class="cta__actions">
+            <a class="btn btn--lime btn--lg" href="mailto:sm@surveymeter.org" data-i18n="cta.email">Kirim email</a>
+            <a class="btn btn--ghost btn--lg" href="https://www.google.com/maps/search/?api=1&amp;query=Jl.+Jenengan+Raya+No.+109+Maguwoharjo+Sleman" rel="noopener" target="_blank" data-i18n="cta.map">Buka di peta</a>
           </div>
         </div>
       </div>
+    </section>
+  </main>
 
-      <div class="footer-bottom">
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <img src="assets/img/surveymeter-logo.png" alt="SurveyMETER" width="168" height="31" loading="lazy">
+          <address>Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282</address>
+        </div>
         <div>
-          &copy; 2026 PT SurveyMETER. Seluruh hak cipta dilindungi undang-undang.
+          <h2 class="footer__head" data-i18n="footer.data">Data</h2>
+          <ul>
+            <li><a href="#data" data-i18n="nav.data">Data publik</a></li>
+            <li><a href="#publikasi" data-i18n="nav.pubs">Publikasi</a></li>
+          </ul>
         </div>
-        <div class="footer-socials">
-          <a href="https://twitter.com/SurveyMETER_Id" target="_blank" rel="noopener">Twitter / X</a>
-          <a href="https://www.facebook.com/Surveymeter/" target="_blank" rel="noopener">Facebook</a>
-          <a href="https://surveymeter.org" target="_blank" rel="noopener">Arsip Web Drupal</a>
+        <div>
+          <h2 class="footer__head" data-i18n="footer.org">Lembaga</h2>
+          <ul>
+            <li><a href="#tentang" data-i18n="nav.about">Tentang</a></li>
+            <li><a href="#kontak" data-i18n="nav.contact">Kontak</a></li>
+            <li><a href="https://x.com/SurveyMETER_Id" rel="noopener" target="_blank">X: @SurveyMETER_Id</a></li>
+            <li><a href="https://www.facebook.com/Surveymeter" rel="noopener" target="_blank">Facebook: Surveymeter</a></li>
+          </ul>
+        </div>
+        <div>
+          <h2 class="footer__head" data-i18n="footer.contact">Kontak</h2>
+          <ul>
+            <li><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></li>
+            <li><a href="tel:+622744477464">+62 274 4477-464</a></li>
+            <li><span data-i18n="footer.fax">Faks</span> +62 274 4477-004</li>
+          </ul>
         </div>
       </div>
+      <p class="footer__fine">&copy; <span id="year">2026</span> PT SurveyMETER</p>
     </div>
   </footer>
 
-  <!-- Modal: Data Request & Collaboration Inquiry -->
-  <div class="modal-overlay" id="dataModalOverlay" onclick="closeDataModal(event)">
-    <div class="modal-box" onclick="event.stopPropagation()">
-      <button class="modal-close-btn" onclick="closeDataModal()">&times;</button>
-      <h3 class="modal-title" id="modalTitleText">Permohonan Akses Data</h3>
-      <p class="modal-desc" id="modalDescText">
-        Silakan isi data institusi dan tujuan penggunaan data atau kebutuhan riset Anda. Tim manajemen data SurveyMETER akan merespons dalam 1x24 jam kerja.
-      </p>
-
-      <form id="dataRequestForm" onsubmit="submitDataRequest(event)">
-        <div class="form-group">
-          <label class="form-label">Nama Lengkap</label>
-          <input type="text" class="form-input" id="reqName" placeholder="Contoh: Budi Santoso" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Institusi / Universitas / Kementerian</label>
-          <input type="text" class="form-input" id="reqOrg" placeholder="Contoh: Universitas Gadjah Mada / Bappenas" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Email Kerja / Akademik</label>
-          <input type="email" class="form-input" id="reqEmail" placeholder="nama@instansi.ac.id" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Dataset / Topik yang Diajukan</label>
-          <input type="text" class="form-input" id="reqSubject" value="Dataset SurveyMETER" required>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Ringkasan Tujuan Riset</label>
-          <textarea class="form-textarea" id="reqNotes" placeholder="Tuliskan secara ringkas tujuan penggunaan data atau lingkup kerja sama yang direncanakan..." required></textarea>
-        </div>
-
-        <button type="submit" class="btn btn-primary modal-submit-btn">
-          Kirimkan Permohonan Data &rarr;
-        </button>
-      </form>
-
-      <div class="form-success-msg" id="formSuccessMsg">
-        Permohonan Anda berhasil dikirim. Tim sekretariat SurveyMETER akan menghubungi Anda melalui email yang terdaftar.
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Dataset Search / Filtering
-    function filterDatasets() {
-      const query = document.getElementById('datasetSearchInput').value.toLowerCase();
-      const cards = document.querySelectorAll('.dataset-card');
-      cards.forEach(card => {
-        const title = card.getAttribute('data-title') || '';
-        const text = card.innerText.toLowerCase();
-        if (title.includes(query) || text.includes(query)) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Publication Category Filtering
-    function filterPubs(cat, btn) {
-      document.querySelectorAll('.pub-tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-
-      const cards = document.querySelectorAll('.pub-card');
-      cards.forEach(card => {
-        const cardCat = card.getAttribute('data-category');
-        if (cat === 'all' || cardCat === cat) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    // Modal Control
-    function openDataModal(contextTitle) {
-      const overlay = document.getElementById('dataModalOverlay');
-      const subjectInput = document.getElementById('reqSubject');
-      const modalTitle = document.getElementById('modalTitleText');
-      
-      if (contextTitle) {
-        subjectInput.value = contextTitle;
-        modalTitle.innerText = contextTitle;
-      }
-      
-      document.getElementById('dataRequestForm').style.display = 'block';
-      document.getElementById('formSuccessMsg').style.display = 'none';
-      overlay.classList.add('active');
-    }
-
-    function closeDataModal(e) {
-      document.getElementById('dataModalOverlay').classList.remove('active');
-    }
-
-    function submitDataRequest(e) {
-      e.preventDefault();
-      document.getElementById('dataRequestForm').style.display = 'none';
-      document.getElementById('formSuccessMsg').style.display = 'block';
-      setTimeout(() => {
-        closeDataModal();
-      }, 3000);
-    }
-
-    function toggleMobileMenu() {
-      const navLinks = document.querySelector('.nav-links');
-      if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
-      } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '72px';
-        navLinks.style.left = '0';
-        navLinks.style.right = '0';
-        navLinks.style.background = '#FAF8F5';
-        navLinks.style.padding = '20px';
-        navLinks.style.borderBottom = '1px solid #E6E1D8';
-        navLinks.style.boxShadow = '0 10px 20px rgba(0,0,0,0.05)';
-      }
-    }
-  </script>
+  <script src="main.js?v=8" defer></script>
 </body>
 </html>

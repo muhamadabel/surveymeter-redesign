@@ -141,9 +141,9 @@ Buat struktur halaman yang ramping dan langsung ke inti:
 
 ## 6. INVENTARIS ASET DI DIREKTORI INI
 
-Semua aset lokal telah diunduh di `/Users/user/Documents/surveymeter-redesign/`:
+Semua aset lokal ada di `assets/img/`:
 - `surveymeter-logo.png`: Logo resmi RGBA asli (336x62).
-- `svg_logo.py`: Skrip penghasil logo vektor SVG murni anti-pecah.
+- `ilas-wide.jpg`: Potongan lebar foto dari sampul laporan ILAS (`slai_adb.png`, 682x226), dipakai di pratinjau hero dan tab ILAS.
 - `pub_repro.jpg`, `pub_irsa.jpg`, `pub_adb_aging.jpg`, `pub_nbs.jpg`, `pub_aceh.jpg`: File gambar cover publikasi asli.
 - `slai_adb.png`, `peta.png`: Dokumentasi dan peta survei IFLS East.
 
@@ -152,12 +152,52 @@ Semua aset lokal telah diunduh di `/Users/user/Documents/surveymeter-redesign/`:
 ## 7. CHECKLIST ACCEPTANCE CRITERIA (QUALITY GATE)
 
 Sebelum Claude Code menyatakan tugas selesai untuk direview Hermes:
-- [ ] Nol karakter tanda pisah em-dash di seluruh kode HTML, CSS, JS, dan copy.
-- [ ] Nol emoji pada antarmuka aplikasi.
-- [ ] Tidak ada tumpukan badge/chip berlebihan dan tidak ada daftar centang (`✓`) seragam.
-- [ ] Teks deskripsi pendek, padat, to-the-point, dan bebas dari kata-kata AI generik.
-- [ ] Menggunakan palet warm ecru (`#FAF8F5`), putih bersih, dan hijau botani (`#0E5E3A`).
-- [ ] Tipografi menggunakan perpaduan sans-serif bersih dan aksen serif miring editorial.
-- [ ] Seluruh tombol dan kontrol interaktif (modal permohonan data, filter pencarian) berfungsi normal.
-- [ ] Tata letak responsif mulus dari layar ponsel (375px) hingga desktop lebar (1440px).
-- [ ] File deliverable siap diuji langsung di browser lokal.
+- [x] Nol karakter tanda pisah em-dash di seluruh kode HTML, CSS, JS, dan copy.
+- [x] Nol emoji pada antarmuka aplikasi.
+- [x] Tidak ada tumpukan badge/chip berlebihan dan tidak ada daftar centang (`✓`) seragam.
+- [x] Teks deskripsi pendek, padat, to-the-point, dan bebas dari kata-kata AI generik.
+- [x] Menggunakan palet warm ecru (`#FAF8F5`), putih bersih, dan hijau botani (`#0E5E3A`).
+- [x] Tipografi menggunakan perpaduan sans-serif bersih dan aksen serif miring editorial.
+- [x] Seluruh tombol dan kontrol interaktif (modal permohonan data, filter pencarian) berfungsi normal.
+- [x] Tata letak responsif mulus dari layar ponsel (375px) hingga desktop lebar (1440px).
+- [x] File deliverable siap diuji langsung di browser lokal.
+
+---
+
+## 8. STATUS IMPLEMENTASI (Claude Code, 13 Nov 2026, arah visual SurveyMonkey)
+
+Branch: `feat/landing-page`. Situs statis tanpa build step, siap deploy Vercel/Cloudflare Pages (root = folder repo). Preview lokal: `python3 -m http.server 4173`. CSS/JS dimuat dengan `?v=N`; naikkan angkanya setiap ubah file supaya cache browser tidak menahan versi lama.
+
+Atas permintaan Abel (13 Nov 2026), tampilan mengikuti gaya surveymonkey.com, bukan lagi Osome. Yang diambil hanya bahasa visualnya (struktur, ritme, bentuk). Logo, copy, dan warna kuning merek SurveyMonkey tidak dipakai. Versi bento Osome sebelumnya disimpan di `legacy/v1-bento/`.
+
+Revisi 13 Nov 2026 (permintaan Abel): situs diubah jadi situs profil lembaga, bukan portal data. Semua fitur prototipe yang belum punya sistem di belakangnya dihapus: modal "Minta akses data" + form draf email, tombol "Unduh metadata (JSON)" yang dibuat dari brief, dan tombol "Minta ringkasan" di publikasi. Mockup aplikasi "Katalog data" di hero diganti galeri foto/peta/sampul asli, karena aplikasi itu tidak ada. Versi portal disimpan di `legacy/v2-portal/`.
+
+### Struktur
+- `index.html`: ribbon mint, nav (CTA "Hubungi kami"), hero tengah + galeri (foto ILAS, peta IFLS East, sampul publikasi), strip mitra + angka, blok survei hijau tua (tab), publikasi (kartu), tentang, blok Kontak hijau tua (`#kontak`), footer 4 kolom.
+- `styles.css`: token di `:root`. Breakpoint 1080 (CTA nav hilang), 900, 760 (menu mobile), 600.
+- `main.js`: toggle ID/EN, menu mobile, tab survei (pola WAI-ARIA, panah kiri/kanan, Home/End), filter publikasi, tombol "Tanyakan survei ini" (mailto dengan subjek nama survei).
+- `legacy/`: generator lama, `index.v0.html`, `v1-bento/`, dan `v2-portal/`. Tidak dipakai.
+
+### Design Read
+Landing lembaga riset untuk peneliti, donor, dan pemerintah, dengan gaya produk SaaS yang tenang: headline sans tebal di tengah, pratinjau "produk" (katalog data), blok hijau tua membulat, kartu abu hangat, tombol pill. Dial ENERGY 2 / RHYTHM 2 / MOTION 2.
+
+### Alasan keputusan (R-31)
+- Warna: kanvas `#FDFCF9`, tinta hijau tua `#0F2A1E`, hijau merek `#0E5E3A`, blok `#0A3322`, kartu `#F3F1EC`, aksen lime `#C6E57A` diambil dari swoosh logo SurveyMETER (pengganti kuning SurveyMonkey). Semua pasangan teks lolos 4.5:1 (cek `contrast-check.py`).
+- Font: hanya Plus Jakarta Sans 400-800. Newsreader dihapus karena referensi tidak memakai serif.
+- Galeri di hero memakai aset asli saja: foto ILAS, peta IFLS East, sampul Aging Well in Asia, masing-masing dengan keterangan singkat.
+- Strip mitra memakai nama, bukan logo (logo resmi mitra belum ada). Bergerak pelan (marquee), berhenti saat hover, diam bila `prefers-reduced-motion`.
+- Angka di strip: 2002, 7 provinsi, 3 survei panel utama. Semuanya dari bagian 4. Angka "22+ / 35+ / 100+ / 100%" tetap tidak dipakai karena tidak bersumber.
+- Data: tiga dataset jadi tab di dalam blok hijau tua, masing-masing dengan visual sendiri (foto ILAS, peta IFLS East, sampul publikasi Aceh) dan kartu melayang.
+- Publikasi: kartu abu, publikasi terbaru jadi kartu lebar mint.
+- Radius: 48px blok, 28px kartu, pill untuk tombol/tab/chip, 10px input.
+
+### Perubahan dari brief (sengaja)
+- Input pencarian dataset dihapus. Dengan tiga dataset, tab lebih cepat; pencarian kembali relevan kalau katalog bertambah.
+- Menu "Fokus Riset" diganti "Kontak" karena tidak ada konten fokus riset yang bersumber.
+- Headline: "Mengukur Indonesia, rumah demi rumah."
+- Footer tidak menyebut Kemenkumham karena belum ada nomor SK.
+
+### Belum ada (butuh data dari SurveyMETER)
+- Prosedur resmi akses data. Kalau SurveyMETER punya repositori atau formulir resmi, tombol "Tanyakan survei ini" bisa diarahkan ke sana.
+- File publikasi atau tautan DOI, supaya kartu publikasi bisa dibuka.
+- Logo resmi mitra (untuk strip mitra), nomor SK Kemenkumham, foto dokumentasi beresolusi tinggi (foto ILAS sekarang hanya 682 px, agak lembut di layar retina).

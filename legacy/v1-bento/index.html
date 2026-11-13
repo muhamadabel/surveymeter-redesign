@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SurveyMETER | Survei rumah tangga dan data panel Indonesia</title>
+  <meta name="description" content="Lembaga riset di Yogyakarta yang mengumpulkan data rumah tangga Indonesia sejak 2002.">
+  <meta name="theme-color" content="#0E5E3A">
+  <link rel="icon" href="assets/img/surveymeter-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=4">
+</head>
+<body>
+  <a class="skip-link" href="#main" data-i18n="skip">Langsung ke konten</a>
+
+  <div class="ribbon">
+    <p class="container">
+      <span data-i18n="ribbon.text">Data ILAS 2023 sudah bisa diminta untuk riset.</span>
+      <a href="#ilas" data-i18n="ribbon.link">Lihat dataset</a>
+    </p>
+  </div>
+
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#top" class="nav__logo">
+        <img src="assets/img/surveymeter-logo.png" alt="SurveyMETER, ke awal halaman" width="168" height="31">
+      </a>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Utama">
+        <a href="#data" data-i18n="nav.data">Data publik</a>
+        <a href="#publikasi" data-i18n="nav.pubs">Publikasi</a>
+        <a href="#tentang" data-i18n="nav.about">Tentang</a>
+        <a href="#kontak" data-i18n="nav.contact">Kontak</a>
+      </nav>
+
+      <div class="nav__actions">
+        <div class="lang" role="group" aria-label="Bahasa">
+          <button type="button" class="lang__btn" data-lang="id" aria-pressed="true">ID</button>
+          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button type="button" class="btn btn--primary nav__cta" data-open-access data-i18n="nav.cta">Minta akses data</button>
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
+          <span data-i18n="nav.menu">Menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container">
+        <h1 class="hero__title">
+          <span data-i18n="hero.title">Mengukur kehidupan rumah tangga Indonesia,</span>
+          <em data-i18n="hero.titleEm">sejak 2002.</em>
+        </h1>
+        <div class="hero__foot">
+          <p class="hero__lead" data-i18n="hero.lead">Lembaga riset di Yogyakarta. Tim kami berasal dari pengumpulan data Indonesia Family Life Survey bersama RAND Corporation, dan kini membuka data panel untuk peneliti.</p>
+          <div class="hero__actions">
+            <a href="#data" class="btn btn--primary btn--lg" data-i18n="hero.cta">Lihat dataset</a>
+            <a href="#publikasi" class="link" data-i18n="hero.link">Baca publikasi</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="glance" aria-labelledby="glance-title">
+      <div class="container">
+        <header class="glance__head">
+          <p class="kicker" data-i18n="glance.kicker">Sekilas</p>
+          <h2 id="glance-title" class="display" data-i18n="glance.title">Apa yang sudah dikerjakan SurveyMETER</h2>
+        </header>
+
+        <div class="bento">
+          <article class="tile tile--facts" aria-roledescription="carousel" aria-labelledby="facts-label">
+            <div class="tile__top">
+              <p class="tile__label" id="facts-label" data-i18n="glance.facts">Fakta dan angka</p>
+              <button type="button" class="ring" id="facts-toggle" aria-controls="facts">
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
+                  <circle class="ring__track" cx="12" cy="12" r="9"/>
+                  <circle class="ring__fill" cx="12" cy="12" r="9" pathLength="100"/>
+                  <path class="ring__pause" d="M10 9v6M14 9v6"/>
+                  <path class="ring__play" d="M10.5 8.8v6.4l5-3.2z"/>
+                </svg>
+                <span class="sr-only" data-i18n="facts.pause">Jeda putaran fakta</span>
+              </button>
+            </div>
+            <div class="facts" id="facts">
+              <div class="fact is-active" role="group" aria-roledescription="slide" aria-label="1 / 4">
+                <p class="fact__num">2002</p>
+                <p class="fact__text" data-i18n="fact.1">tahun lembaga berdiri di Yogyakarta</p>
+              </div>
+              <div class="fact" role="group" aria-roledescription="slide" aria-label="2 / 4" hidden>
+                <p class="fact__num">7<span class="fact__unit" data-i18n="fact.2u">provinsi</span></p>
+                <p class="fact__text" data-i18n="fact.2">Indonesia Timur dalam panel IFLS East</p>
+              </div>
+              <div class="fact" role="group" aria-roledescription="slide" aria-label="3 / 4" hidden>
+                <p class="fact__num">15+<span class="fact__unit" data-i18n="fact.3u">tahun</span></p>
+                <p class="fact__text" data-i18n="fact.3">pengalaman tim mengelola IFLS bersama RAND sebelum lembaga berdiri</p>
+              </div>
+              <div class="fact" role="group" aria-roledescription="slide" aria-label="4 / 4" hidden>
+                <p class="fact__num">3<span class="fact__unit" data-i18n="fact.4u">dataset</span></p>
+                <p class="fact__text" data-i18n="fact.4">terbuka untuk diminta peneliti</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="tile tile--story">
+            <img class="tile__photo" src="assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto dari sampul laporan ILAS" width="682" height="226">
+            <p class="tile__label" data-i18n="glance.story">Rilis terbaru</p>
+            <div class="story">
+              <h3 class="story__title" data-i18n="story.title">ILAS 2023: kesehatan, keluarga, dan ekonomi lansia Indonesia.</h3>
+              <p class="story__by" data-i18n="story.by">Bersama Asian Development Bank. Rilis 2024.</p>
+            </div>
+            <a href="#ilas" class="round">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M5 12h13M13 6l6 6-6 6"/></svg>
+              <span class="sr-only" data-i18n="story.cta">Lihat dataset ILAS 2023</span>
+            </a>
+          </article>
+
+          <article class="tile tile--partners">
+            <p class="tile__label" data-i18n="glance.partners">Mitra</p>
+            <h3 class="tile__head" data-i18n="partners.head">Bekerja bersama donor, universitas, dan kementerian</h3>
+            <div class="partners-foot">
+              <p class="big">20<span class="sr-only" data-i18n="partners.count"> lembaga mitra</span></p>
+              <ul class="discs">
+                <li><span aria-hidden="true">WB</span><span class="sr-only">The World Bank</span></li>
+                <li><span aria-hidden="true">ADB</span><span class="sr-only">Asian Development Bank</span></li>
+                <li><span aria-hidden="true">RAND</span><span class="sr-only">RAND Corporation</span></li>
+                <li><span aria-hidden="true">J-PAL</span><span class="sr-only">J-PAL</span></li>
+                <li><span aria-hidden="true">Duke</span><span class="sr-only">Duke University</span></li>
+                <li><span aria-hidden="true">ANU</span><span class="sr-only">Australian National University</span></li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="tile tile--case">
+            <p class="tile__label" data-i18n="glance.case">Dataset panel</p>
+            <h3 class="tile__head"><a href="#data" class="stretch" data-i18n="case.title">IFLS East: rumah tangga di 7 provinsi Indonesia Timur</a></h3>
+            <div class="case__map">
+              <img src="assets/img/peta.png" alt="Peta Indonesia dengan wilayah survei IFLS East diarsir biru" width="602" height="248" loading="lazy">
+            </div>
+          </article>
+
+          <article class="tile tile--pubs" aria-roledescription="carousel" aria-labelledby="pubs-label">
+            <p class="tile__label" id="pubs-label" data-i18n="glance.pubs">Publikasi</p>
+            <div class="quotes" id="quotes" aria-live="polite">
+              <div class="quote is-active" role="group" aria-roledescription="slide" aria-label="1 / 5">
+                <p class="quote__title">Studi Kualitatif Persepsi Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta</p>
+                <p class="quote__by"><time datetime="2024-10-14">14 Okt 2024</time> Sikoki, Larastiti, Suriastini, Pujiastuti</p>
+              </div>
+              <div class="quote" role="group" aria-roledescription="slide" aria-label="2 / 5" hidden>
+                <p class="quote__title">COVID-19 Disruption and Regional Development in Small Island Economies</p>
+                <p class="quote__by"><time datetime="2024-07-17">17 Jul 2024</time> IRSA Conference 2024</p>
+              </div>
+              <div class="quote" role="group" aria-roledescription="slide" aria-label="3 / 5" hidden>
+                <p class="quote__title">Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</p>
+                <p class="quote__by"><time datetime="2024-05-31">31 Mei 2024</time> SurveyMETER</p>
+              </div>
+              <div class="quote" role="group" aria-roledescription="slide" aria-label="4 / 5" hidden>
+                <p class="quote__title">Aging Well in Asia: Asian Development Policy Report 2024</p>
+                <p class="quote__by"><time datetime="2024-05-15">15 Mei 2024</time> Asian Development Bank</p>
+              </div>
+              <div class="quote" role="group" aria-roledescription="slide" aria-label="5 / 5" hidden>
+                <p class="quote__title">Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</p>
+                <p class="quote__by"><time datetime="2023-12">Des 2023</time> Jurnal Sustainability</p>
+              </div>
+            </div>
+            <div class="arrows">
+              <button type="button" class="arrow" data-step="-1" aria-controls="quotes">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+                <span class="sr-only" data-i18n="quotes.prev">Publikasi sebelumnya</span>
+              </button>
+              <button type="button" class="arrow arrow--solid" data-step="1" aria-controls="quotes">
+                <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+                <span class="sr-only" data-i18n="quotes.next">Publikasi berikutnya</span>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="data" id="data" aria-labelledby="data-title">
+      <div class="container">
+        <div class="head">
+          <div>
+            <h2 id="data-title" data-i18n="data.title">Data publik</h2>
+            <p class="head__note" data-i18n="data.note">Tiga dataset bisa diminta untuk riset. Tulis kebutuhan Anda, tim data yang memutuskan aksesnya.</p>
+          </div>
+          <div class="search">
+            <label for="dataset-search" data-i18n="data.searchLabel">Cari dataset</label>
+            <input type="search" id="dataset-search" placeholder="Contoh: lansia, Aceh, STATA" data-i18n-placeholder="data.searchPh" autocomplete="off">
+          </div>
+        </div>
+
+        <ol class="register">
+          <li class="register__row" id="ilas" data-dataset data-search="ilas 2023 indonesia longitudinal aging survey penuaan lansia lanjut usia kesehatan mental keluarga ekonomi adb asian development bank pengasuh">
+            <p class="register__key">ILAS 2023 <em data-i18n="ilas.year">rilis 2024</em></p>
+            <div class="register__main">
+              <h3>Indonesia Longitudinal Aging Survey</h3>
+              <p data-i18n="ilas.desc">Kesehatan fisik dan mental lansia, jejaring keluarga, dan kesiapan ekonomi di hari tua. Dikerjakan bersama Asian Development Bank.</p>
+              <p class="register__fine" data-i18n="ilas.contents">Data mikro, kuesioner, modul pengasuh.</p>
+            </div>
+            <div class="actions actions--col">
+              <button type="button" class="btn btn--quiet" data-open-access="ILAS 2023" data-i18n="data.request">Minta akses</button>
+              <button type="button" class="link" data-metadata="ilas-2023" data-i18n="data.meta">Unduh metadata (JSON)</button>
+            </div>
+          </li>
+          <li class="register__row" data-dataset data-search="ifls east indonesia timur rumah tangga komunitas panel stata spss codebook">
+            <p class="register__key">IFLS East</p>
+            <div class="register__main">
+              <h3 data-i18n="ifls.title">Survei Aspek Kehidupan Rumah Tangga Indonesia Timur</h3>
+              <p data-i18n="ifls.desc">Panel multi-topik tentang rumah tangga dan komunitas di 7 provinsi Indonesia Timur.</p>
+              <p class="register__fine" data-i18n="ifls.fine">STATA (.dta), SPSS, codebook PDF. Terbuka dengan registrasi peneliti.</p>
+            </div>
+            <div class="actions actions--col">
+              <button type="button" class="btn btn--quiet" data-open-access="IFLS East" data-i18n="data.request">Minta akses</button>
+              <button type="button" class="link" data-metadata="ifls-east" data-i18n="data.meta">Unduh metadata (JSON)</button>
+            </div>
+          </li>
+          <li class="register__row" data-dataset data-search="star aceh tsunami pemulihan bencana panel duke world bank perumahan relokasi ekonomi sosial">
+            <p class="register__key">STAR Aceh</p>
+            <div class="register__main">
+              <h3 data-i18n="star.title">Studi Pemulihan Pasca Tsunami Aceh</h3>
+              <p data-i18n="star.desc">Pemulihan ekonomi, relokasi rumah, dan ketahanan sosial warga setelah tsunami. Bersama Duke University dan World Bank.</p>
+              <p class="register__fine" data-i18n="star.fine">Data panel beberapa putaran.</p>
+            </div>
+            <div class="actions actions--col">
+              <button type="button" class="btn btn--quiet" data-open-access="STAR Aceh" data-i18n="data.request">Minta akses</button>
+              <button type="button" class="link" data-metadata="star-aceh" data-i18n="data.meta">Unduh metadata (JSON)</button>
+            </div>
+          </li>
+        </ol>
+
+        <div class="empty" id="dataset-empty" hidden>
+          <p><span data-i18n="data.empty">Tidak ada dataset yang cocok dengan</span> <strong id="empty-term"></strong>.</p>
+          <button type="button" class="link" id="search-clear" data-i18n="data.clear">Tampilkan semua dataset</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="pubs" id="publikasi" aria-labelledby="pubs-title">
+      <div class="container">
+        <div class="head">
+          <h2 id="pubs-title" data-i18n="pubs.title">Publikasi</h2>
+          <div class="tabs" role="tablist" aria-label="Topik">
+            <button type="button" role="tab" class="tab" aria-selected="true" data-filter="all" data-i18n="tab.all">Semua</button>
+            <button type="button" role="tab" class="tab" aria-selected="false" data-filter="penuaan" data-i18n="tab.aging">Penuaan</button>
+            <button type="button" role="tab" class="tab" aria-selected="false" data-filter="kesehatan" data-i18n="tab.health">Kesehatan</button>
+            <button type="button" role="tab" class="tab" aria-selected="false" data-filter="ekonomi" data-i18n="tab.econ">Ekonomi</button>
+          </div>
+        </div>
+
+        <ol class="publist" id="publist">
+          <li class="pub" data-topics="kesehatan">
+            <time datetime="2024-10-14">14 Okt 2024</time>
+            <img src="assets/img/pub_repro.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <h3>Studi Kualitatif Persepsi Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta</h3>
+              <p>Sikoki, Larastiti, Suriastini, Pujiastuti</p>
+            </div>
+            <a class="link pub__link" href="mailto:sm@surveymeter.org" data-summary data-i18n="pubs.summary">Minta ringkasan</a>
+          </li>
+          <li class="pub" data-topics="ekonomi">
+            <time datetime="2024-07-17">17 Jul 2024</time>
+            <img src="assets/img/pub_irsa.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <h3 lang="en">COVID-19 Disruption and Regional Development in Small Island Economies</h3>
+              <p>IRSA Conference 2024</p>
+            </div>
+            <a class="link pub__link" href="mailto:sm@surveymeter.org" data-summary data-i18n="pubs.summary">Minta ringkasan</a>
+          </li>
+          <li class="pub" data-topics="penuaan ekonomi">
+            <time datetime="2024-05-31">31 Mei 2024</time>
+            <img src="assets/img/pub_nbs.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <h3>Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</h3>
+              <p>SurveyMETER</p>
+            </div>
+            <a class="link pub__link" href="mailto:sm@surveymeter.org" data-summary data-i18n="pubs.summary">Minta ringkasan</a>
+          </li>
+          <li class="pub" data-topics="penuaan">
+            <time datetime="2024-05-15">15 Mei 2024</time>
+            <img src="assets/img/pub_adb_aging.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <h3 lang="en">Aging Well in Asia: Asian Development Policy Report 2024</h3>
+              <p data-i18n="pubs.adb">Bersama Asian Development Bank</p>
+            </div>
+            <a class="link pub__link" href="mailto:sm@surveymeter.org" data-summary data-i18n="pubs.summary">Minta ringkasan</a>
+          </li>
+          <li class="pub" data-topics="ekonomi">
+            <time datetime="2023-12">Des 2023</time>
+            <img src="assets/img/pub_aceh.jpg" alt="" width="120" height="140" loading="lazy">
+            <div class="pub__body">
+              <h3>Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</h3>
+              <p>Jurnal Sustainability</p>
+            </div>
+            <a class="link pub__link" href="mailto:sm@surveymeter.org" data-summary data-i18n="pubs.summary">Minta ringkasan</a>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="about" id="tentang" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__text">
+            <h2 id="about-title" data-i18n="about.title">Tentang SurveyMETER</h2>
+            <p data-i18n="about.p1">Nama kami singkatan dari Survey, Measurement, Training, and Research. Lembaga ini dibentuk oleh tim yang lebih dari 15 tahun mengelola pengumpulan data Indonesia Family Life Survey bersama RAND Corporation.</p>
+            <h3 class="small-head" data-i18n="leaders.title">Direktur eksekutif</h3>
+            <ul class="leaders">
+              <li><span>Dr. Cecep Sukria Sumantri</span><span data-i18n="leaders.now">sejak Feb 2024</span></li>
+              <li><span>Dr. Ir. Ni Wayan Suriastini, M.Phil</span><span>2012 - 2024</span></li>
+              <li><span>Bondan S. Sikoki</span><span>2002 - 2012</span></li>
+            </ul>
+          </div>
+          <ol class="timeline">
+            <li><em>2002</em><p data-i18n="tl.1">Yayasan SurveyMETER berdiri di Yogyakarta pada 20 Februari.</p></li>
+            <li><em>2011</em><p data-i18n="tl.2">Menguatkan peran sebagai lembaga penelitian dan advokasi kebijakan publik.</p></li>
+            <li><em>2020</em><p data-i18n="tl.3">Menjadi PT SurveyMETER untuk memperluas kemitraan riset internasional.</p></li>
+          </ol>
+        </div>
+
+        <div class="partners">
+          <h3 class="small-head" data-i18n="partners.title">Pernah bekerja bersama</h3>
+          <div class="partners__grid">
+            <div>
+              <h4 data-i18n="partners.g1">Donor dan multilateral</h4>
+              <p>The World Bank, Asian Development Bank, UNICEF, UNDP, AusAID / Prospera</p>
+            </div>
+            <div>
+              <h4 data-i18n="partners.g2">Riset dan universitas</h4>
+              <p>RAND Corporation, J-PAL, Innovations for Poverty Action, Duke University, Australian National University, University of Melbourne, University of Sydney, UCLA, Hitotsubashi University</p>
+            </div>
+            <div>
+              <h4 data-i18n="partners.g3">Pemerintah</h4>
+              <p>Bappenas, TNP2K, Kementerian Kesehatan, BNPB, Kementerian Pendidikan, Pemerintah Daerah DIY</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" id="kontak">
+    <div class="container">
+      <h2 class="footer__title" data-i18n="footer.title">Kantor Yogyakarta</h2>
+      <div class="footer__grid">
+        <address class="footer__addr">Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282</address>
+        <ul class="footer__contact">
+          <li><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></li>
+          <li><a href="tel:+622744477464">+62 274 4477-464</a></li>
+          <li><span data-i18n="footer.fax">Faks</span> +62 274 4477-004</li>
+          <li><a href="https://x.com/SurveyMETER_Id" rel="noopener" target="_blank">X: @SurveyMETER_Id</a></li>
+          <li><a href="https://www.facebook.com/Surveymeter" rel="noopener" target="_blank">Facebook: Surveymeter</a></li>
+        </ul>
+      </div>
+      <p class="footer__fine">&copy; <span id="year">2026</span> PT SurveyMETER</p>
+    </div>
+  </footer>
+
+  <div class="modal" id="access-modal" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal__close" data-close aria-label="Tutup">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15"/></svg>
+      </button>
+
+      <form class="form" id="access-form" novalidate>
+        <h2 id="modal-title" data-i18n="form.title">Minta akses data</h2>
+        <p class="form__hint" data-i18n="form.hint">Isian ini menjadi draf email ke sm@surveymeter.org. Anda yang mengirimnya.</p>
+
+        <div class="field">
+          <label for="f-dataset" data-i18n="form.dataset">Dataset</label>
+          <select id="f-dataset" name="dataset">
+            <option value="ILAS 2023">ILAS 2023</option>
+            <option value="IFLS East">IFLS East</option>
+            <option value="STAR Aceh">STAR Aceh</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-name" data-i18n="form.name">Nama lengkap</label>
+          <input id="f-name" type="text" name="name" autocomplete="name" required aria-describedby="e-name">
+          <p class="field__error" id="e-name" data-i18n="form.errName">Tulis nama lengkap Anda.</p>
+        </div>
+        <div class="field">
+          <label for="f-org" data-i18n="form.org">Instansi</label>
+          <input id="f-org" type="text" name="org" autocomplete="organization" required aria-describedby="e-org">
+          <p class="field__error" id="e-org" data-i18n="form.errOrg">Tulis nama instansi atau kampus Anda.</p>
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" type="email" name="email" autocomplete="email" required aria-describedby="e-email">
+          <p class="field__error" id="e-email" data-i18n="form.errEmail">Format email belum benar, contoh: nama@kampus.ac.id</p>
+        </div>
+        <div class="field">
+          <label for="f-purpose" data-i18n="form.purpose">Untuk riset apa data ini?</label>
+          <textarea id="f-purpose" name="purpose" rows="3" required aria-describedby="e-purpose"></textarea>
+          <p class="field__error" id="e-purpose" data-i18n="form.errPurpose">Jelaskan singkat tujuan riset Anda.</p>
+        </div>
+
+        <button type="submit" class="btn btn--primary btn--lg btn--block" data-i18n="form.submit">Siapkan email</button>
+      </form>
+
+      <div class="form-done" id="access-done" hidden>
+        <h2 data-i18n="done.title">Draf email siap</h2>
+        <p data-i18n="done.text">Permohonan belum terkirim. Buka draf di aplikasi email Anda, periksa, lalu kirim.</p>
+        <a class="btn btn--primary btn--lg btn--block" id="access-mailto" href="mailto:sm@surveymeter.org" data-i18n="done.cta">Buka draf email</a>
+        <button type="button" class="link form-done__back" id="access-back" data-i18n="done.back">Ubah isian</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="main.js?v=4" defer></script>
+</body>
+</html>

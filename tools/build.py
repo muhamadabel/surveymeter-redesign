@@ -480,9 +480,12 @@ def sidebar(lang, key):
                 continue
             groups = []
             for col_id, col_en, links in cols:
-                lis = ''.join(
-                    f'<li><a href="{url(lang, p)}"{" aria-current=\"page\"" if k == key else ""}>{esc(lid if lang == "id" else len_)}</a></li>'
-                    for k, lid, len_, p in links)
+                lis_items = []
+                for k, lid, len_, p in links:
+                    current = ' aria-current="page"' if k == key else ''
+                    label = esc(lid if lang == 'id' else len_)
+                    lis_items.append(f'<li><a href="{url(lang, p)}"{current}>{label}</a></li>')
+                lis = ''.join(lis_items)
                 groups.append(f'<p class="side__head">{esc(col_id if lang == "id" else col_en)}</p><ul class="side__nav">{lis}</ul>')
             sib = f'<div class="side__box"><h2 class="side__title">{u["in_section"]}</h2>{"".join(groups)}</div>'
     news = site[lang]['lists']['news']['items'][:5]

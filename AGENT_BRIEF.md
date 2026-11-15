@@ -143,7 +143,9 @@ Buat struktur halaman yang ramping dan langsung ke inti:
 
 Semua aset lokal ada di `assets/img/`:
 - `surveymeter-logo.png`: Logo resmi RGBA asli (336x62).
-- `ilas-wide.jpg`: Potongan lebar foto dari sampul laporan ILAS (`slai_adb.png`, 682x226), dipakai di pratinjau hero dan tab ILAS.
+- `ilas-wide.jpg`: Potongan lebar foto dari sampul laporan ILAS (`slai_adb.png`, 682x226), dipakai di beranda.
+- `photo-*.jpg`: foto kegiatan dari slider situs lama (APRC 2024, tim, pelatihan 2022 dan 2024).
+- `arsip/`: 798 gambar artikel hasil migrasi (lihat bagian 8).
 - `pub_repro.jpg`, `pub_irsa.jpg`, `pub_adb_aging.jpg`, `pub_nbs.jpg`, `pub_aceh.jpg`: File gambar cover publikasi asli.
 - `slai_adb.png`, `peta.png`: Dokumentasi dan peta survei IFLS East.
 
@@ -164,40 +166,57 @@ Sebelum Claude Code menyatakan tugas selesai untuk direview Hermes:
 
 ---
 
-## 8. STATUS IMPLEMENTASI (Claude Code, 13 Nov 2026, arah visual SurveyMonkey)
+## 8. STATUS IMPLEMENTASI (Claude Code, 15 Nov 2026, migrasi penuh situs lama)
 
-Branch: `feat/landing-page`. Situs statis tanpa build step, siap deploy Vercel/Cloudflare Pages (root = folder repo). Preview lokal: `python3 -m http.server 4173`. CSS/JS dimuat dengan `?v=N`; naikkan angkanya setiap ubah file supaya cache browser tidak menahan versi lama.
+Branch: `feat/landing-page`. Situs statis multi-halaman (ID + EN), dibangun oleh generator Python tanpa dependensi. Hasil build ikut di-commit, jadi Vercel/Cloudflare cukup menyajikan folder repo apa adanya (`vercel.json`: `outputDirectory: "."`, `cleanUrls: true`).
 
-Atas permintaan Abel (13 Nov 2026), tampilan mengikuti gaya surveymonkey.com, bukan lagi Osome. Yang diambil hanya bahasa visualnya (struktur, ritme, bentuk). Logo, copy, dan warna kuning merek SurveyMonkey tidak dipakai. Versi bento Osome sebelumnya disimpan di `legacy/v1-bento/`.
+Atas permintaan pihak SurveyMETER, situs baru memuat informasi selengkap surveymeter.org lama: semua menu, semua daftar, dan isi setiap artikel. Batas "maksimal 5 section" di bagian 5 tidak berlaku lagi. Versi landing satu halaman sebelumnya disimpan di `legacy/v1-bento/`, `legacy/v2-portal/`, `legacy/v3-profil/`.
 
-Revisi 13 Nov 2026 (permintaan Abel): situs diubah jadi situs profil lembaga, bukan portal data. Semua fitur prototipe yang belum punya sistem di belakangnya dihapus: modal "Minta akses data" + form draf email, tombol "Unduh metadata (JSON)" yang dibuat dari brief, dan tombol "Minta ringkasan" di publikasi. Mockup aplikasi "Katalog data" di hero diganti galeri foto/peta/sampul asli, karena aplikasi itu tidak ada. Versi portal disimpan di `legacy/v2-portal/`.
+### Cara kerja
+- Sumber yang diedit:
+  - `content/site.json`: konten hasil migrasi.
+  - `content/images.json`: peta URL gambar lama ke file lokal.
+  - `content/home_en.json`: teks beranda versi EN.
+  - `templates/home.html`: isi beranda.
+  - `styles.css`, `main.js`.
+  - `tools/build.py`: menu, label UI, halaman khusus.
+- Build: `python3 tools/build.py`. Cek link internal: `python3 tools/check_links.py` (harus 0 rusak).
+- Jangan edit file HTML hasil build langsung (`index.html`, `en/`, `baca/`, `tentang/`, dst.), karena akan tertimpa saat build berikutnya.
+- Setiap ubah CSS/JS, naikkan `ASSET_V` di `tools/build.py` (cache busting).
+- Generator otomatis mengganti em-dash dan en-dash di konten lama dengan tanda hubung biasa.
 
-### Struktur
-- `index.html`: ribbon mint, nav (CTA "Hubungi kami"), hero tengah + galeri (foto ILAS, peta IFLS East, sampul publikasi), strip mitra + angka, blok survei hijau tua (tab), publikasi (kartu), tentang, blok Kontak hijau tua (`#kontak`), footer 4 kolom.
-- `styles.css`: token di `:root`. Breakpoint 1080 (CTA nav hilang), 900, 760 (menu mobile), 600.
-- `main.js`: toggle ID/EN, menu mobile, tab survei (pola WAI-ARIA, panah kiri/kanan, Home/End), filter publikasi, tombol "Tanyakan survei ini" (mailto dengan subjek nama survei).
-- `legacy/`: generator lama, `index.v0.html`, `v1-bento/`, dan `v2-portal/`. Tidak dipakai.
+### Struktur URL (ID di `/`, EN di `/en/`)
+- Tentang: `tentang/sasaran`, `tentang/mitra`, `tentang/profil`, `tentang/struktur`, `tentang/visi-misi`, `tentang/kemampuan`.
+- Kegiatan: `kegiatan/evaluasi-dampak`, `kegiatan/studi-kebijakan`, `kegiatan/pendampingan`, `kegiatan/pelatihan`, `kegiatan/pengelolaan-pengetahuan`, `kegiatan/penelitian-ilmiah`, `kegiatan/kajian`.
+- Publikasi: `publikasi` (semua, berhalaman), `publikasi/working-paper`, `publikasi/policy-brief`, `publikasi/buku`, `publikasi/artikel`, `publikasi/laporan-penelitian`, `publikasi/laporan-tahunan`.
+- Data publik: `data/ifls-east`, `data/star`, `data/ilas`.
+- Kelompok kerja: `kelompok-kerja/lansia/{survei,pendampingan,publikasi}`, `kelompok-kerja/stunting/{survei,publikasi}`, `kelompok-kerja/silani`, `kelompok-kerja/ltc`.
+- Karir per tahun: `karir/2019` sampai `karir/2024`.
+- Lainnya: `berita` (berhalaman, 18 per halaman), `kontak`, `cari` (pencarian di browser dari `search-index-{id,en}.json`).
+- Artikel: `baca/<slug>` (ID) dan `en/read/<slug>` (EN).
+- `sitemap.xml` dan `404.html` dibuat otomatis.
 
-### Design Read
-Landing lembaga riset untuk peneliti, donor, dan pemerintah, dengan gaya produk SaaS yang tenang: headline sans tebal di tengah, pratinjau "produk" (katalog data), blok hijau tua membulat, kartu abu hangat, tombol pill. Dial ENERGY 2 / RHYTHM 2 / MOTION 2.
+### Hasil migrasi (diambil 15 Nov 2026)
+- 472 artikel ID dan 428 artikel EN, masing-masing lengkap dengan tanggal, tipe, penulis, kata kunci, lokasi, dan isi.
+- 439 berita ID, 22 buku dengan link unduh Google Drive, dan semua daftar kegiatan, publikasi, kelompok kerja, serta karir.
+- Halaman "Sasaran dan Lingkup" dan "Kemampuan dan Pengalaman" di situs lama hanya berupa gambar. Isinya ditulis ulang sebagai HTML: fokus isu per periode dan linimasa perjalanan.
+- Daftar karir EN 2020-2024 kosong di situs lama, jadi diisi dengan versi ID. Halaman STAR versi ID error, jadi memakai versi EN.
+- Sekitar 46 artikel tidak bisa diambil karena server lama selalu mengembalikan HTTP 500 untuk halaman itu. Item-nya disembunyikan dari daftar supaya tidak ada link mati. Daftar lengkapnya ada di log crawl.
+- "Semua publikasi" dibangun dari gabungan semua kategori publikasi, karena beberapa halaman paginasi di situs lama juga selalu error.
+- Gambar: 798 file diunduh dari situs lama atas izin Abel, dikecilkan menjadi JPEG maksimal 1000 px di `assets/img/arsip/` (sekitar 91 MB). Gambar di folder `/uploads/` lama sudah 404 di situs lama sendiri, jadi dihapus dari isi artikel.
+- File dokumen (PDF di `sites/default/files`, `media/*/download`) dan halaman data ILAS (`surveymeter.org/ilas/`) masih ditautkan ke server lama.
 
-### Alasan keputusan (R-31)
-- Warna: kanvas `#FDFCF9`, tinta hijau tua `#0F2A1E`, hijau merek `#0E5E3A`, blok `#0A3322`, kartu `#F3F1EC`, aksen lime `#C6E57A` diambil dari swoosh logo SurveyMETER (pengganti kuning SurveyMonkey). Semua pasangan teks lolos 4.5:1 (cek `contrast-check.py`).
-- Font: hanya Plus Jakarta Sans 400-800. Newsreader dihapus karena referensi tidak memakai serif.
-- Galeri di hero memakai aset asli saja: foto ILAS, peta IFLS East, sampul Aging Well in Asia, masing-masing dengan keterangan singkat.
-- Strip mitra memakai nama, bukan logo (logo resmi mitra belum ada). Bergerak pelan (marquee), berhenti saat hover, diam bila `prefers-reduced-motion`.
-- Angka di strip: 2002, 7 provinsi, 3 survei panel utama. Semuanya dari bagian 4. Angka "22+ / 35+ / 100+ / 100%" tetap tidak dipakai karena tidak bersumber.
-- Data: tiga dataset jadi tab di dalam blok hijau tua, masing-masing dengan visual sendiri (foto ILAS, peta IFLS East, sampul publikasi Aceh) dan kartu melayang.
-- Publikasi: kartu abu, publikasi terbaru jadi kartu lebar mint.
-- Radius: 48px blok, 28px kartu, pill untuk tombol/tab/chip, 10px input.
+### Penting sebelum ganti domain
+- Unduhan PDF dan portal data ILAS masih di server Drupal lama. Sebelum surveymeter.org dipindah ke situs baru, server lama harus tetap hidup di subdomain (misalnya `arsip.surveymeter.org`), atau file-file itu dipindah dan link-nya diganti di `content/site.json`.
+- Siapkan redirect dari URL lama (`/id/read/...`, `/id/post/...`, `/en/...`) ke URL baru. Generator sudah punya pemetaannya (`post_path`, `OLD_SECTION`), tinggal diekspor ke `vercel.json` kalau dibutuhkan.
 
-### Perubahan dari brief (sengaja)
-- Input pencarian dataset dihapus. Dengan tiga dataset, tab lebih cepat; pencarian kembali relevan kalau katalog bertambah.
-- Menu "Fokus Riset" diganti "Kontak" karena tidak ada konten fokus riset yang bersumber.
-- Headline: "Mengukur Indonesia, rumah demi rumah."
-- Footer tidak menyebut Kemenkumham karena belum ada nomor SK.
+### Desain
+- Tema terang: putih + krem `#F6F4EF`, hijau `#0E5E3A`, blok `#0A3322`, aksen lime `#C6E57A`. Font Plus Jakarta Sans.
+- Mega menu desktop meniru struktur menu lama (Tentang, Kegiatan, Publikasi, Kelompok kerja, Karir), lalu Berita dan Cari. Di bawah 1100 px berubah jadi menu akordeon.
+- Halaman daftar memakai kartu bergambar dan sidebar "Di bagian ini" + "Berita terbaru". Daftar publikasi memakai sampul tegak.
+- Semua tombol dan link minimal 44 x 44 px. Tanpa geser horizontal di 360 px. Kontras teks lolos 4.5:1.
 
 ### Belum ada (butuh data dari SurveyMETER)
-- Prosedur resmi akses data. Kalau SurveyMETER punya repositori atau formulir resmi, tombol "Tanyakan survei ini" bisa diarahkan ke sana.
-- File publikasi atau tautan DOI, supaya kartu publikasi bisa dibuka.
-- Logo resmi mitra (untuk strip mitra), nomor SK Kemenkumham, foto dokumentasi beresolusi tinggi (foto ILAS sekarang hanya 682 px, agak lembut di layar retina).
+- Foto pengurus (struktur organisasi sekarang memakai inisial).
+- Logo resmi mitra, nomor SK Kemenkumham.
+- Terjemahan EN untuk artikel yang hanya ada dalam bahasa Indonesia (sekarang ditautkan ke versi ID).

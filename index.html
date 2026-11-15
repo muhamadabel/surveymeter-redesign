@@ -3,131 +3,273 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SurveyMETER | Survei rumah tangga dan data panel Indonesia</title>
-  <meta name="description" content="Lembaga riset di Yogyakarta yang mengumpulkan data rumah tangga Indonesia sejak 2002.">
+  <title>SurveyMETER | Survei, pengukuran, pelatihan, dan penelitian</title>
+  <meta name="description" content="Lembaga survei, pelatihan, dan penelitian di Yogyakarta sejak 2002.">
   <meta name="theme-color" content="#0A3322">
-  <link rel="icon" href="assets/img/surveymeter-logo.png">
+  <link rel="canonical" href="https://surveymeter.org/">
+  <link rel="alternate" hreflang="en" href="https://surveymeter.org/en/">
+  <link rel="icon" href="/assets/img/surveymeter-logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=8">
+  <link rel="stylesheet" href="/styles.css?v=14">
 </head>
-<body>
-  <a class="skip-link" href="#main" data-i18n="skip">Langsung ke konten</a>
-
-  <div class="ribbon">
-    <p class="container">
-      <strong data-i18n="ribbon.lead">Rilis baru:</strong>
-      <span data-i18n="ribbon.text">ILAS 2023, studi penuaan penduduk Indonesia bersama ADB.</span>
-      <a href="#data" data-i18n="ribbon.link">Lihat dataset</a>
-    </p>
+<body class="is-home">
+  <a class="skip-link" href="#main">Langsung ke konten</a>
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <p class="topbar__info">
+        <span>Jl. Jenengan Raya No. 109, Sleman, Yogyakarta</span>
+        <a href="tel:+622744477464">+62 274 4477-464</a>
+        <a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a>
+      </p>
+      <nav class="lang" aria-label="Bahasa">
+        <a class="lang__btn" href="/" hreflang="id" lang="id" aria-current="true">ID</a>
+        <a class="lang__btn" href="/en/" hreflang="en" lang="en">EN</a>
+      </nav>
+    </div>
   </div>
-
   <header class="nav" id="nav">
     <div class="container nav__inner">
-      <a href="#top" class="nav__logo">
-        <img src="assets/img/surveymeter-logo.png" alt="SurveyMETER, ke awal halaman" width="168" height="31">
-      </a>
-
+      <a href="/" class="nav__logo"><img src="/assets/img/surveymeter-logo.png" alt="SurveyMETER, beranda" width="168" height="31"></a>
       <nav class="nav__menu" id="nav-menu" aria-label="Utama">
-        <a href="#data" data-i18n="nav.data">Data publik</a>
-        <a href="#publikasi" data-i18n="nav.pubs">Publikasi</a>
-        <a href="#tentang" data-i18n="nav.about">Tentang</a>
-        <a href="#kontak" data-i18n="nav.contact">Kontak</a>
+        <ul class="menu"><li class="menu__item"><button type="button" class="menu__btn" aria-expanded="false" aria-controls="mega-about">Tentang</button><div class="mega" id="mega-about" hidden><div class="mega__inner"><div class="mega__col"><p class="mega__head">Tentang kami</p><ul><li><a href="/tentang/sasaran/">Sasaran dan lingkup kegiatan</a></li><li><a href="/tentang/mitra/">Mitra kerja dan klien</a></li></ul></div><div class="mega__col"><p class="mega__head">Profil</p><ul><li><a href="/tentang/profil/">Profil lembaga</a></li><li><a href="/tentang/struktur/">Struktur organisasi</a></li><li><a href="/tentang/visi-misi/">Visi dan misi</a></li><li><a href="/tentang/kemampuan/">Kemampuan dan pengalaman</a></li></ul></div></div></div></li><li class="menu__item"><button type="button" class="menu__btn" aria-expanded="false" aria-controls="mega-activities">Kegiatan</button><div class="mega" id="mega-activities" hidden><div class="mega__inner"><div class="mega__col"><p class="mega__head">Survei</p><ul><li><a href="/kegiatan/evaluasi-dampak/">Studi evaluasi dampak</a></li><li><a href="/kegiatan/studi-kebijakan/">Studi berorientasi kebijakan</a></li></ul></div><div class="mega__col"><p class="mega__head">Pelatihan dan pengembangan</p><ul><li><a href="/kegiatan/pendampingan/">Pendampingan</a></li><li><a href="/kegiatan/pelatihan/">Pelatihan</a></li></ul></div><div class="mega__col"><p class="mega__head">Riset</p><ul><li><a href="/kegiatan/pengelolaan-pengetahuan/">Pengelolaan pengetahuan</a></li><li><a href="/kegiatan/penelitian-ilmiah/">Penelitian ilmiah</a></li><li><a href="/kegiatan/kajian/">Kajian</a></li></ul></div></div></div></li><li class="menu__item"><button type="button" class="menu__btn" aria-expanded="false" aria-controls="mega-pubs">Publikasi</button><div class="mega" id="mega-pubs" hidden><div class="mega__inner"><div class="mega__col"><p class="mega__head">Publikasi</p><ul><li><a href="/publikasi/">Semua publikasi</a></li><li><a href="/publikasi/working-paper/">Working paper</a></li><li><a href="/publikasi/policy-brief/">Policy brief</a></li><li><a href="/publikasi/buku/">Buku</a></li><li><a href="/publikasi/artikel/">Artikel</a></li><li><a href="/publikasi/laporan-penelitian/">Laporan penelitian</a></li><li><a href="/publikasi/laporan-tahunan/">Laporan tahunan</a></li></ul></div><div class="mega__col"><p class="mega__head">Data publik</p><ul><li><a href="/data/ifls-east/">Sakertim (IFLS East)</a></li><li><a href="/data/star/">STAR</a></li><li><a href="/data/ilas/">ILAS 2023</a></li></ul></div></div></div></li><li class="menu__item"><button type="button" class="menu__btn" aria-expanded="false" aria-controls="mega-wg">Kelompok kerja</button><div class="mega" id="mega-wg" hidden><div class="mega__inner"><div class="mega__col"><p class="mega__head">Lansia</p><ul><li><a href="/kelompok-kerja/lansia/survei/">Survei</a></li><li><a href="/kelompok-kerja/lansia/pendampingan/">Pendampingan</a></li><li><a href="/kelompok-kerja/lansia/publikasi/">Publikasi</a></li></ul></div><div class="mega__col"><p class="mega__head">Stunting</p><ul><li><a href="/kelompok-kerja/stunting/survei/">Survei</a></li><li><a href="/kegiatan/pendampingan/">Pendampingan</a></li><li><a href="/kelompok-kerja/stunting/publikasi/">Publikasi</a></li></ul></div><div class="mega__col"><p class="mega__head">Proyek percontohan</p><ul><li><a href="/kelompok-kerja/silani/">SILANI</a></li><li><a href="/kelompok-kerja/ltc/">LTC (perawatan jangka panjang)</a></li></ul></div></div></div></li><li class="menu__item"><button type="button" class="menu__btn" aria-expanded="false" aria-controls="mega-career">Karir</button><div class="mega" id="mega-career" hidden><div class="mega__inner"><div class="mega__col"><p class="mega__head">Lowongan</p><ul><li><a href="/karir/2024/">2024</a></li><li><a href="/karir/2023/">2023</a></li><li><a href="/karir/2022/">2022</a></li><li><a href="/karir/2021/">2021</a></li><li><a href="/karir/2020/">2020</a></li><li><a href="/karir/2019/">2019</a></li></ul></div></div></div></li><li class="menu__item"><a class="menu__link" href="/berita/">Berita</a></li></ul>
+        <a class="nav__search" href="/cari/">Cari</a>
       </nav>
-
       <div class="nav__actions">
-        <div class="lang" role="group" aria-label="Bahasa">
-          <button type="button" class="lang__btn" data-lang="id" aria-pressed="true">ID</button>
-          <button type="button" class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
-        </div>
-        <a href="#kontak" class="btn btn--lime nav__cta" data-i18n="nav.cta">Hubungi kami</a>
-        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-          <span data-i18n="nav.menu">Menu</span>
-        </button>
+        <a href="/kontak/" class="btn btn--primary nav__cta">Hubungi kami</a>
+        <button type="button" class="nav__toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-menu" data-label-open="Menu" data-label-close="Tutup"><span>Menu</span></button>
       </div>
     </div>
   </header>
-
   <main id="main">
+
+    <!-- Hero -->
     <section class="hero" id="top">
-      <div class="container">
-        <h1 class="hero__title">
-          <span data-i18n="hero.l1">Mengukur Indonesia,</span>
-          <span data-i18n="hero.l2">rumah demi rumah.</span>
-        </h1>
-        <p class="hero__lead" data-i18n="hero.lead">Lembaga riset di Yogyakarta yang mengumpulkan data panel rumah tangga Indonesia sejak 2002, bersama mitra dalam dan luar negeri.</p>
-        <div class="hero__actions">
-          <a href="#data" class="btn btn--primary btn--lg" data-i18n="hero.cta">Lihat survei kami</a>
-          <a href="#tentang" class="btn btn--outline btn--lg" data-i18n="hero.about">Tentang SurveyMETER</a>
-        </div>
-
-        <div class="showcase">
-          <figure class="show show--photo">
-            <img src="assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto dari sampul laporan ILAS" width="682" height="226">
-            <figcaption class="float-card">
-              <span>ILAS 2023</span>
-              <strong data-i18n="show.ilas">Studi penuaan penduduk bersama Asian Development Bank</strong>
-            </figcaption>
-          </figure>
-          <figure class="show show--map">
-            <figcaption>
-              <span>IFLS East</span>
-              <strong data-i18n="show.ifls">7 provinsi Indonesia Timur</strong>
-            </figcaption>
-            <img src="assets/img/peta.png" alt="Peta Indonesia dengan wilayah survei IFLS East diarsir biru" width="602" height="248">
-          </figure>
-          <figure class="show show--pub">
-            <img src="assets/img/pub_adb_aging.jpg" alt="Sampul laporan Aging Well in Asia" width="120" height="140">
-            <figcaption>
-              <span data-i18n="show.pub">Publikasi, Mei 2024</span>
-              <strong lang="en">Aging Well in Asia: Asian Development Policy Report 2024</strong>
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <section class="proof" aria-labelledby="proof-title">
-      <div class="container">
-        <div class="proof__top">
-          <h2 class="proof__title" id="proof-title" data-i18n="proof.title">Bekerja bersama 20 lembaga donor, universitas, dan pemerintah</h2>
-          <div class="marquee">
-            <ul class="marquee__track">
-              <li>The World Bank</li>
-              <li>Asian Development Bank</li>
-              <li>RAND Corporation</li>
-              <li>J-PAL</li>
-              <li>UNICEF</li>
-              <li>Duke University</li>
-              <li>Bappenas</li>
-              <li>TNP2K</li>
-            </ul>
-            <ul class="marquee__track" aria-hidden="true">
-              <li>The World Bank</li>
-              <li>Asian Development Bank</li>
-              <li>RAND Corporation</li>
-              <li>J-PAL</li>
-              <li>UNICEF</li>
-              <li>Duke University</li>
-              <li>Bappenas</li>
-              <li>TNP2K</li>
-            </ul>
+      <div class="container hero__grid">
+        <div class="hero__text">
+          <p class="eyebrow">Survey, Measurement, Training, and Research</p>
+          <h1 class="hero__title">Menghimpun data, memperkuat kebijakan.</h1>
+          <p class="hero__lead">SurveyMETER adalah lembaga survei, pelatihan, dan penelitian di Yogyakarta. Sejak 2002 kami mengelola survei rumah tangga berskala besar untuk pemerintah, lembaga internasional, dan universitas.</p>
+          <div class="hero__actions">
+            <a href="#kegiatan" class="btn btn--primary btn--lg">Lihat kegiatan kami</a>
+            <a href="#data" class="btn btn--outline btn--lg">Data publik</a>
           </div>
         </div>
+        <figure class="hero__media">
+          <img src="/assets/img/photo-aprc-2024.jpg" alt="Tim SurveyMETER dan mitra di panggung peluncuran laporan ILAS 2023, Bali" width="1600" height="924">
+          <figcaption class="float-card">
+            <span>12 September 2024, Bali</span>
+            <strong>Peluncuran laporan ILAS 2023 di Asia-Pacific Regional Conference on Population Ageing, bersama Bappenas, FEB UI, Lembaga Demografi, dan ADB.</strong>
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="container">
         <dl class="stats">
-          <div><dt data-i18n="stat.1">tahun lembaga berdiri</dt><dd>2002</dd></div>
-          <div><dt data-i18n="stat.2">provinsi dalam panel IFLS East</dt><dd>7</dd></div>
-          <div><dt data-i18n="stat.3">survei panel utama</dt><dd>3</dd></div>
+          <div><dt>berdiri di Yogyakarta</dt><dd>2002</dd></div>
+          <div><dt>mitra kerja dan klien</dt><dd>37</dd></div>
+          <div><dt>rumah tangga di panel IFLS East</dt><dd>2.500</dd></div>
+          <div><dt>dataset publik</dt><dd>3</dd></div>
         </dl>
       </div>
     </section>
 
-    <section class="data" id="data" aria-labelledby="data-title">
+    <!-- Tentang -->
+    <section class="section" id="tentang" aria-labelledby="about-title">
+      <div class="container">
+        <div class="split">
+          <div>
+            <p class="eyebrow">Tentang kami</p>
+            <h2 id="about-title">Dari tim lapangan IFLS menjadi lembaga riset kebijakan</h2>
+            <p class="lead">SurveyMETER didirikan untuk meresmikan kerja sama staf peneliti yang lebih dari 15 tahun mengumpulkan dan menganalisis data Indonesia Family Life Survey (IFLS). Tujuan kami menyediakan data yang akurat dan dapat diandalkan untuk kebijakan publik yang berkelanjutan.</p>
+            <ol class="timeline">
+              <li><strong>2002</strong><p>Berdiri sebagai yayasan di Yogyakarta, 20 Februari 2002.</p></li>
+              <li><strong>2009</strong><p>Yayasan dikukuhkan kembali dengan akta notaris baru, tercatat di Kemenkumham RI.</p></li>
+              <li><strong>2011</strong><p>Menjadi lembaga penelitian: penelitian, pendampingan, dan advokasi kebijakan.</p></li>
+              <li><strong>2020</strong><p>Menjadi PT SurveyMETER untuk memperluas kerja sama dengan pemerintah, swasta, dan mitra luar negeri.</p></li>
+            </ol>
+          </div>
+          <figure class="photo">
+            <img src="/assets/img/photo-tim.jpg" alt="Foto bersama tim SurveyMETER di depan gedung kantor" width="1600" height="1045" loading="lazy">
+            <figcaption>Tim SurveyMETER di depan kantor, Maguwoharjo, Sleman.</figcaption>
+          </figure>
+        </div>
+
+        <div class="vm">
+          <div class="vm__vision">
+            <h3>Visi</h3>
+            <p>Lembaga pengetahuan yang menginspirasi dan memperkuat kebijakan berbasis data penelitian.</p>
+          </div>
+          <div class="vm__mission">
+            <h3>Misi</h3>
+            <ol>
+              <li>Mengelola survei dan penelitian berskala besar dengan obyektif dan berkualitas.</li>
+              <li>Mengelola kajian independen yang inovatif.</li>
+              <li>Aktif terlibat dalam dialog kebijakan.</li>
+              <li>Memberikan bantuan teknis dalam penggunaan data dan hasil riset kepada pengambil kebijakan dan lembaga pengetahuan lain.</li>
+            </ol>
+          </div>
+          <div class="vm__values">
+            <h3>Nilai</h3>
+            <ul>
+              <li>Integritas ilmiah: objektif, berkualitas, independen</li>
+              <li>Kemanusiaan</li>
+              <li>Netral dan tidak berpihak</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="org">
+          <div class="org__head">
+            <h3>Struktur organisasi 2024-2028</h3>
+            <p>Direktur eksekutif sebelumnya: Bondan S. Sikoki (2002-2012) dan Dr. Ir. Ni Wayan Suriastini, M.Phil (2012-2024).</p>
+          </div>
+          <ul class="people">
+            <li><span class="avatar" aria-hidden="true">BS</span><div><strong>Bondan S. Sikoki, M.A.</strong><span>Komisaris</span></div></li>
+            <li><span class="avatar" aria-hidden="true">CS</span><div><strong>Dr. Cecep Sukria Sumantri</strong><span>Direktur, sejak Februari 2024</span></div></li>
+            <li><span class="avatar" aria-hidden="true">NA</span><div><strong>Nasirudin, S.P., M.Ec.Dev.</strong><span>Koordinator Divisi Survei</span></div></li>
+            <li><span class="avatar" aria-hidden="true">EP</span><div><strong>Dr. Edy Purwanto, M.Sc.</strong><span>Koordinator Divisi Kajian</span></div></li>
+            <li><span class="avatar" aria-hidden="true">DA</span><div><strong>Dani Alfah, S.Sos., M.P.A.</strong><span>Koordinator Divisi Pelatihan</span></div></li>
+            <li><span class="avatar" aria-hidden="true">IU</span><div><strong>Iip Umar Rifai, S.Kom</strong><span>Koordinator Divisi IT Support</span></div></li>
+            <li><span class="avatar" aria-hidden="true">MM</span><div><strong>Muhammad Mulia, S.E., M.Sc.</strong><span>Manajer Kantor</span></div></li>
+            <li><span class="avatar" aria-hidden="true">KS</span><div><strong>Kawandiyono Santoso</strong><span>Manajer Bisnis</span></div></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kegiatan -->
+    <section class="section section--tint" id="kegiatan" aria-labelledby="work-title">
+      <div class="container">
+        <div class="head">
+          <div>
+            <p class="eyebrow">Kegiatan</p>
+            <h2 id="work-title">Tiga bidang kerja SurveyMETER</h2>
+          </div>
+          <p class="head__note">Pemerintah Indonesia dan lembaga internasional berulang kali mempercayakan survei, evaluasi, dan pelatihan kepada kami.</p>
+        </div>
+
+        <div class="areas">
+          <article class="area">
+            <span class="area__num">01</span>
+            <h3>Survei</h3>
+            <dl>
+              <dt><a href="/kegiatan/evaluasi-dampak/">Studi evaluasi dampak</a></dt>
+              <dd>Mengukur dampak program pemerintah atau lembaga internasional yang sedang berjalan maupun sudah selesai.</dd>
+              <dt><a href="/kegiatan/studi-kebijakan/">Studi berorientasi kebijakan</a></dt>
+              <dd>Menilai efektivitas kebijakan sebagai acuan perbaikan program ke depan.</dd>
+            </dl>
+          </article>
+          <article class="area">
+            <span class="area__num">02</span>
+            <h3>Pelatihan dan pengembangan</h3>
+            <dl>
+              <dt><a href="/kegiatan/pelatihan/">Pelatihan</a></dt>
+              <dd>Pelatihan pewawancara, petugas lapangan, editor data, dan kader untuk survei mitra.</dd>
+              <dt><a href="/kegiatan/pendampingan/">Pendampingan wilayah</a></dt>
+              <dd>Laboratorium sosial di wilayah dampingan untuk menguji instrumen pemberdayaan dan mendukung kebijakan daerah berbasis data.</dd>
+            </dl>
+          </article>
+          <article class="area">
+            <span class="area__num">03</span>
+            <h3>Riset</h3>
+            <dl>
+              <dt><a href="/kegiatan/penelitian-ilmiah/">Penelitian ilmiah</a></dt>
+              <dd>Survei rumah tangga longitudinal bersama peneliti dalam dan luar negeri, sebagian datanya terbuka untuk publik.</dd>
+              <dt><a href="/kegiatan/kajian/">Kajian dan pengelolaan pengetahuan</a></dt>
+              <dd>Kajian independen, policy brief, dan tulisan populer dari hasil riset.</dd>
+            </dl>
+          </article>
+        </div>
+
+        <div class="projects">
+          <div class="projects__head">
+            <h3>Proyek terpilih</h3>
+            <div class="chips" role="group" aria-label="Saring proyek">
+              <button type="button" class="chip" aria-pressed="true" data-filter="all">Semua</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="dampak">Evaluasi dampak</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="kebijakan">Kebijakan</button>
+              <button type="button" class="chip" aria-pressed="false" data-filter="riset">Riset</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table class="table">
+              <thead>
+                <tr><th scope="col">Proyek</th><th scope="col">Tahun</th><th scope="col">Mitra</th></tr>
+              </thead>
+              <tbody>
+                <tr data-type="riset"><td>Indonesia Longitudinal Aging Survey (ILAS)</td><td>2023</td><td>Bappenas, Asian Development Bank</td></tr>
+                <tr data-type="kebijakan"><td>Pilot layanan perawatan jangka panjang (LTC) berbasis komunitas, DIY</td><td>2021-2022</td><td>Bappenas, Asian Development Bank (TA 9928)</td></tr>
+                <tr data-type="dampak"><td>Evaluasi dampak proyek gizi MCC Indonesia</td><td>2020</td><td>Mathematica Policy Research</td></tr>
+                <tr data-type="riset"><td>Survei Nilai-nilai Dunia (World Values Survey) fase 7 di Indonesia</td><td>2020</td><td>-</td></tr>
+                <tr data-type="kebijakan"><td>Welfare Tracking in the Aftermath of Crisis (WelTrac)</td><td>2019</td><td>Bank Dunia</td></tr>
+                <tr data-type="kebijakan"><td>Survei Indikator Pelayanan Pendidikan (SIPP / SDI)</td><td>2019</td><td>Bank Dunia, Kementerian Agama</td></tr>
+                <tr data-type="kebijakan"><td>Studi Individual Deprivation Measure (IDM), Jeneponto dan Pangkep</td><td>2018</td><td>-</td></tr>
+                <tr data-type="kebijakan"><td>Studi komparasi Kota Ramah Lanjut Usia di 14 kota</td><td>2017</td><td>-</td></tr>
+                <tr data-type="dampak"><td>Survei Keberlanjutan Petani Penggarap (SKPP-KOPI)</td><td>2017</td><td>University of Sydney, J-PAL</td></tr>
+                <tr data-type="dampak"><td>Survei Pengguna TransJakarta untuk partisipasi pekerja perempuan (TransKerja)</td><td>-</td><td>RAND Corporation, AIPEG</td></tr>
+                <tr data-type="dampak"><td>Survei Akses Jasa Keuangan (SAJAK)</td><td>-</td><td>Bank Dunia</td></tr>
+                <tr data-type="dampak"><td>Survei observasi intervensi program Transparansi untuk Pembangunan (T4D)</td><td>2015-2016</td><td>Transparency for Development</td></tr>
+                <tr data-type="riset"><td>Survei Komunitas dan Fasilitas (KOMFAS) IFLS5</td><td>2015</td><td>-</td></tr>
+                <tr data-type="riset"><td>Studi Demensia di Yogyakarta</td><td>2015</td><td>-</td></tr>
+                <tr data-type="riset"><td>Survei Aspek Kehidupan Rumah Tangga Indonesia Timur (SAKERTIM / IFLS East)</td><td>2012</td><td>TNP2K, PRSF, AusAID</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="more"><a class="link" href="/kegiatan/evaluasi-dampak/">Lihat arsip proyek lengkap</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Working group -->
+    <section class="section" id="program" aria-labelledby="wg-title">
+      <div class="container">
+        <div class="head">
+          <div>
+            <p class="eyebrow">Kelompok kerja</p>
+            <h2 id="wg-title">Fokus jangka panjang</h2>
+          </div>
+          <p class="head__note">Isu yang kami kerjakan bertahun-tahun, dari survei sampai pendampingan di lapangan.</p>
+        </div>
+        <div class="groups">
+          <article class="group">
+            <h3>Penuaan penduduk</h3>
+            <ul>
+              <li>Studi kebijakan Kota Ramah Lanjut Usia di 14 kota (2017)</li>
+              <li>Studi demensia di Yogyakarta (2015) dan Bali (2018)</li>
+              <li>Pendampingan lansia di Dusun Watugedug, Guwosari, Bantul sejak 2014</li>
+              <li>Indonesia Longitudinal Aging Survey 2023</li>
+            </ul>
+            <a class="link" href="/kelompok-kerja/lansia/survei/">Selengkapnya</a>
+          </article>
+          <article class="group">
+            <h3>Stunting dan gizi anak</h3>
+            <ul>
+              <li>Sistem terpadu penanganan stunting berbasis data di puskesmas, Kabupaten Nganjuk (2018)</li>
+              <li>Evaluasi dampak proyek gizi MCC Indonesia bersama Mathematica</li>
+              <li>Studi dukungan keluarga dengan anak usia 0-36 bulan (2022)</li>
+            </ul>
+            <a class="link" href="/kelompok-kerja/stunting/publikasi/">Selengkapnya</a>
+          </article>
+          <article class="group">
+            <h3>Proyek percontohan</h3>
+            <ul>
+              <li>Perawatan jangka panjang (LTC) berbasis komunitas di 5 area lokus DIY, bantuan teknis ADB TA 9928 bersama Bappenas</li>
+              <li>SILANI: uji coba instrumen Sistem Informasi Lanjut Usia di Guwosari, Bantul (2019)</li>
+            </ul>
+            <a class="link" href="/kelompok-kerja/ltc/">Selengkapnya</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Data publik -->
+    <section class="section section--flush" id="data" aria-labelledby="data-title">
       <div class="container">
         <div class="block">
-          <h2 id="data-title" class="block__title" data-i18n="data.title">Data panel untuk riset dan kebijakan</h2>
-          <p class="block__lead" data-i18n="data.note">Tiga survei panel yang dikerjakan SurveyMETER bersama mitra riset dan donor.</p>
+          <p class="eyebrow eyebrow--light">Data publik</p>
+          <h2 id="data-title" class="block__title">Data panel untuk riset dan kebijakan</h2>
 
           <div class="dtabs" role="tablist" aria-label="Dataset">
             <button type="button" role="tab" class="dtab" id="tab-ilas" aria-controls="ilas" aria-selected="true">ILAS 2023</button>
@@ -137,228 +279,287 @@
 
           <div class="dpanel" id="ilas" role="tabpanel" aria-labelledby="tab-ilas">
             <div class="dpanel__text">
-              <h3>Indonesia Longitudinal Aging Survey</h3>
-              <p data-i18n="ilas.desc">Kesehatan fisik dan mental lansia, jejaring keluarga, dan kesiapan ekonomi di hari tua. Dikerjakan bersama Asian Development Bank.</p>
+              <h3>Indonesia Longitudinal Aging Survey 2023</h3>
+              <p>Melacak kondisi penduduk lanjut usia Indonesia untuk mendukung reformasi jaminan sosial dan kesehatan lansia, serta mengukur indikator Strategi Nasional Kelanjutusiaan (Perpres 88/2021).</p>
               <dl class="facts">
-                <div><dt data-i18n="f.contents">Isi</dt><dd data-i18n="ilas.contents">Data mikro, kuesioner, modul pengasuh</dd></div>
-                <div><dt data-i18n="f.status">Status</dt><dd data-i18n="ilas.status">Rilis 2024</dd></div>
+                <div><dt>Konteks</dt><dd>Penduduk 60+ Indonesia 30,1 juta (10,8%) pada 2022, diproyeksikan 21,9% pada 2050</dd></div>
+                <div><dt>Mitra</dt><dd>Bappenas, Asian Development Bank</dd></div>
               </dl>
               <div class="dpanel__actions">
-                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="ILAS 2023" data-i18n="data.ask">Tanyakan survei ini</a>
+                <a class="btn btn--lime" href="https://surveymeter.org/id/media/47/download" target="_blank" rel="noopener">Unduh laporan</a>
+                <a class="link link--light" href="https://www.surveymeter.org/ilas/" target="_blank" rel="noopener">Halaman data ILAS</a>
               </div>
             </div>
             <figure class="dpanel__visual">
-              <img class="dpanel__photo" src="assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto dari sampul laporan ILAS" width="682" height="226" loading="lazy">
-              <figcaption class="float-card">
-                <span data-i18n="f.partner">Mitra</span>
-                <strong>Asian Development Bank</strong>
-              </figcaption>
+              <img src="/assets/img/ilas-wide.jpg" alt="Seorang nenek dan cucunya membaca tablet di tepi sawah, foto sampul laporan ILAS" width="682" height="226" loading="lazy">
             </figure>
           </div>
 
           <div class="dpanel" id="ifls" role="tabpanel" aria-labelledby="tab-ifls" hidden>
             <div class="dpanel__text">
-              <h3 data-i18n="ifls.title">Survei Aspek Kehidupan Rumah Tangga Indonesia Timur</h3>
-              <p data-i18n="ifls.desc">Panel multi-topik tentang rumah tangga dan komunitas di 7 provinsi Indonesia Timur.</p>
+              <h3>Survei Aspek Kehidupan Rumah Tangga Indonesia Timur</h3>
+              <p>Survei rumah tangga, individu, komunitas, serta fasilitas kesehatan dan pendidikan, mengacu pada desain IFLS. Lapangan 2012.</p>
               <dl class="facts">
-                <div><dt data-i18n="f.format">Format</dt><dd>STATA (.dta), SPSS, codebook PDF</dd></div>
-                <div><dt data-i18n="f.access">Akses</dt><dd data-i18n="ifls.access">Terbuka dengan registrasi peneliti</dd></div>
+                <div><dt>Sampel</dt><dd>Sekitar 10.000 individu, 2.500 rumah tangga, 99 komunitas</dd></div>
+                <div><dt>Wilayah</dt><dd>NTT, Kalimantan Timur, Sulawesi Tenggara, Maluku, Maluku Utara, Papua Barat, Papua</dd></div>
+                <div><dt>Mitra</dt><dd>TNP2K, PRSF, AusAID</dd></div>
               </dl>
               <div class="dpanel__actions">
-                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="IFLS East" data-i18n="data.ask">Tanyakan survei ini</a>
+                <a class="btn btn--lime" href="/data/ifls-east/">Buka halaman data</a>
               </div>
             </div>
             <figure class="dpanel__visual dpanel__visual--map">
-              <img src="assets/img/peta.png" alt="Peta Indonesia dengan wilayah survei IFLS East diarsir biru" width="602" height="248" loading="lazy">
-              <figcaption class="float-card">
-                <span data-i18n="f.coverage">Cakupan</span>
-                <strong data-i18n="ifls.coverage">7 provinsi Indonesia Timur</strong>
-              </figcaption>
+              <img src="/assets/img/peta.png" alt="Peta Indonesia dengan tujuh provinsi wilayah IFLS East diarsir biru" width="602" height="248" loading="lazy">
             </figure>
           </div>
 
           <div class="dpanel" id="star" role="tabpanel" aria-labelledby="tab-star" hidden>
             <div class="dpanel__text">
-              <h3 data-i18n="star.title">Studi Pemulihan Pasca Tsunami Aceh</h3>
-              <p data-i18n="star.desc">Pemulihan ekonomi, relokasi rumah, dan ketahanan sosial warga setelah tsunami. Bersama Duke University dan World Bank.</p>
+              <h3>The Study of the Tsunami Aftermath and Recovery (STAR)</h3>
+              <p>Panel jangka panjang tentang pemulihan ekonomi, relokasi rumah, dan ketahanan sosial warga Aceh setelah tsunami.</p>
               <dl class="facts">
-                <div><dt data-i18n="f.design">Desain</dt><dd data-i18n="star.design">Panel beberapa putaran</dd></div>
-                <div><dt data-i18n="f.partner">Mitra</dt><dd>Duke University, World Bank</dd></div>
+                <div><dt>Mitra</dt><dd>Duke University, World Bank</dd></div>
+                <div><dt>Publikasi terkait</dt><dd>Mengukur Pemulihan Bencana (2023), dampak tsunami pada sumbu HPA 14 tahun kemudian (2023)</dd></div>
               </dl>
               <div class="dpanel__actions">
-                <a class="btn btn--lime" href="mailto:sm@surveymeter.org" data-ask="STAR Aceh" data-i18n="data.ask">Tanyakan survei ini</a>
+                <a class="btn btn--lime" href="/data/star/">Buka halaman data</a>
               </div>
             </div>
             <figure class="dpanel__visual dpanel__visual--cover">
-              <img src="assets/img/pub_aceh.jpg" alt="Sampul artikel Mengukur Pemulihan Bencana" width="120" height="140" loading="lazy">
-              <figcaption class="float-card">
-                <span data-i18n="star.related">Publikasi terkait, Des 2023</span>
-                <strong>Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</strong>
-              </figcaption>
+              <img src="/assets/img/pub_aceh.jpg" alt="Sampul artikel Mengukur Pemulihan Bencana di jurnal Sustainability" width="120" height="140" loading="lazy">
             </figure>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="pubs" id="publikasi" aria-labelledby="pubs-title">
+    <!-- Publikasi -->
+    <section class="section" id="publikasi" aria-labelledby="pubs-title">
       <div class="container">
-        <div class="pubs__head">
-          <h2 id="pubs-title" data-i18n="pubs.title">Publikasi terbaru</h2>
-          <div class="chips" role="tablist" aria-label="Topik">
-            <button type="button" role="tab" class="chip" aria-selected="true" data-filter="all" data-i18n="tab.all">Semua</button>
-            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="penuaan" data-i18n="tab.aging">Penuaan</button>
-            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="kesehatan" data-i18n="tab.health">Kesehatan</button>
-            <button type="button" role="tab" class="chip" aria-selected="false" data-filter="ekonomi" data-i18n="tab.econ">Ekonomi</button>
+        <div class="head">
+          <div>
+            <p class="eyebrow">Publikasi</p>
+            <h2 id="pubs-title">Hasil riset yang bisa dibaca</h2>
           </div>
+          <a class="link" href="/publikasi/">Semua publikasi</a>
         </div>
 
-        <ol class="cards" id="publist">
-          <li class="pub pub--lead" data-topics="kesehatan">
-            <img src="assets/img/pub_repro.jpg" alt="" width="120" height="140" loading="lazy">
-            <div class="pub__body">
-              <time datetime="2024-10-14">14 Okt 2024</time>
-              <h3>Studi Kualitatif Persepsi Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta</h3>
-              <p>Sikoki, Larastiti, Suriastini, Pujiastuti</p>
-            </div>
-          </li>
-          <li class="pub" data-topics="ekonomi">
-            <img src="assets/img/pub_irsa.jpg" alt="" width="120" height="140" loading="lazy">
-            <div class="pub__body">
-              <time datetime="2024-07-17">17 Jul 2024</time>
-              <h3 lang="en">COVID-19 Disruption and Regional Development in Small Island Economies</h3>
-              <p>IRSA Conference 2024</p>
-            </div>
-          </li>
-          <li class="pub" data-topics="penuaan ekonomi">
-            <img src="assets/img/pub_nbs.jpg" alt="" width="120" height="140" loading="lazy">
-            <div class="pub__body">
-              <time datetime="2024-05-31">31 Mei 2024</time>
-              <h3>Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</h3>
-              <p>SurveyMETER</p>
-            </div>
-          </li>
-          <li class="pub" data-topics="penuaan">
-            <img src="assets/img/pub_adb_aging.jpg" alt="" width="120" height="140" loading="lazy">
-            <div class="pub__body">
-              <time datetime="2024-05-15">15 Mei 2024</time>
-              <h3 lang="en">Aging Well in Asia: Asian Development Policy Report 2024</h3>
-              <p data-i18n="pubs.adb">Bersama Asian Development Bank</p>
-            </div>
-          </li>
-          <li class="pub" data-topics="ekonomi">
-            <img src="assets/img/pub_aceh.jpg" alt="" width="120" height="140" loading="lazy">
-            <div class="pub__body">
-              <time datetime="2023-12">Des 2023</time>
-              <h3>Mengukur Pemulihan Bencana: Pelajaran Tahap Awal Wilayah Pasca Tsunami Aceh</h3>
-              <p>Jurnal Sustainability</p>
-            </div>
-          </li>
-        </ol>
+        <div class="ptabs" role="tablist" aria-label="Jenis publikasi">
+          <button type="button" role="tab" class="ptab" id="ptab-new" aria-controls="pp-new" aria-selected="true">Terbaru</button>
+          <button type="button" role="tab" class="ptab" id="ptab-book" aria-controls="pp-book" aria-selected="false" tabindex="-1">Buku</button>
+          <button type="button" role="tab" class="ptab" id="ptab-brief" aria-controls="pp-brief" aria-selected="false" tabindex="-1">Policy brief</button>
+          <button type="button" role="tab" class="ptab" id="ptab-art" aria-controls="pp-art" aria-selected="false" tabindex="-1">Artikel</button>
+          <button type="button" role="tab" class="ptab" id="ptab-rep" aria-controls="pp-rep" aria-selected="false" tabindex="-1">Laporan</button>
+        </div>
+
+        <div class="ppanel" id="pp-new" role="tabpanel" aria-labelledby="ptab-new">
+          <ul class="covers">
+            <li><img src="/assets/img/pub_repro.jpg" alt="" width="120" height="140" loading="lazy"><div><span class="meta"><time datetime="2024-10-14">14 Okt 2024</time> <span>Working paper</span></span><a href="/baca/studi-kualitatif-mengenai-persepsi-terhadap-pendidikan-seks-dan-kesehatan-reproduksi-remaj/">Studi Kualitatif mengenai Persepsi terhadap Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta</a><span class="by">Sikoki, Larastiti, Suriastini, Pujiastuti</span></div></li>
+            <li><img src="/assets/img/pub_irsa.jpg" alt="" width="120" height="140" loading="lazy"><div><span class="meta"><time datetime="2024-07">Jul 2024</time> <span>Buku</span></span><a href="/baca/covid-19-disruption-and-regional-development-small-island-economies/" lang="en">COVID-19 Disruption and Regional Development in Small Island Economies</a><span class="by">Suriastini, Herawati, Wijayanti, Firdauzi, Pujiastuti, Sukamtiningsih</span></div></li>
+            <li><img src="/assets/img/pub_nbs.jpg" alt="" width="120" height="140" loading="lazy"><div><span class="meta"><time datetime="2024-05-31">31 Mei 2024</time> <span>Policy brief</span></span><a href="/baca/mengangkat-kerja-layak-bagi-lanjut-usia-yang-menekuni-solusi-berbasis-alam-di-indonesia/">Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</a><span class="by">SurveyMETER</span></div></li>
+            <li><img src="/assets/img/pub_adb_aging.jpg" alt="" width="120" height="140" loading="lazy"><div><span class="meta"><time datetime="2024-05-15">15 Mei 2024</time> <span>Laporan</span></span><a href="/baca/aging-well-asia/" lang="en">Aging Well in Asia: Asian Development Policy Report 2024</a><span class="by">Asian Development Bank</span></div></li>
+            <li><img src="/assets/img/pub_aceh.jpg" alt="" width="120" height="140" loading="lazy"><div><span class="meta"><time datetime="2023-12-18">18 Des 2023</time> <span>Jurnal</span></span><a href="/baca/mengukur-pemulihan-bencana-pelajaran-dari-tahap-awal-pemulihan-di-wilayah-pasca-tsunami-ac/">Mengukur Pemulihan Bencana: Pelajaran dari Tahap Awal Pemulihan di Wilayah Pasca Tsunami Aceh</a><span class="by">Sustainability</span></div></li>
+            <li class="covers__plain"><div><span class="meta"><time datetime="2024-04-30">30 Apr 2024</time> <span>Working paper</span></span><a href="/baca/older-peoples-capacity-work-indonesia/" lang="en">Older People's Capacity to Work in Indonesia</a><span class="by">Kapasitas lansia untuk bekerja di Indonesia</span></div></li>
+          </ul>
+        </div>
+
+        <div class="ppanel" id="pp-book" role="tabpanel" aria-labelledby="ptab-book" hidden>
+          <ol class="list">
+            <li><span class="list__year">2024</span><div><strong lang="en">COVID-19 Disruption and Regional Development in Small Island Economies</strong><span>Suriastini, Herawati, Wijayanti, Firdauzi, Pujiastuti, Sukamtiningsih. E-ISBN 978-623-94282-5-9</span></div></li>
+            <li><span class="list__year">2023</span><div><strong>Adaptasi PAUD pada Masa Pandemi COVID-19</strong><span>Suriastini, Herawati, Rusadi, Alfah, Firdauzi, Pujiastuti, Sukamtiningsih. SurveyMETER</span></div></li>
+            <li><span class="list__year">2023</span><div><strong>Mewujudkan Lanjut Usia SMART: Pembelajaran dari Studi Kesehatan Lanjut Usia Berbasis Komunitas</strong><span>Suriastini, Mulyanto, Oktarina, Indriati, Naryanta, Ambarwati, Lesmana. SurveyMETER</span></div></li>
+            <li><span class="list__year">2022</span><div><strong>Lanjut Usia dan COVID-19 di Indonesia (Edisi 2022)</strong><span>Suriastini, Mulyanto, Wijayanti, Komazawa, Kato, Maliki, Kharisma. SurveyMETER, ERIA, Bappenas</span></div></li>
+            <li><span class="list__year">2021</span><div><strong>Bunga Rampai: Lansia di Abad 21</strong><span>Suriastini, Sikoki, Mulyanto, dkk. KuMPUL</span></div></li>
+            <li><span class="list__year">2013</span><div><strong>Seri Satu Langkah Menuju Impian Lanjut Usia: Kota Ramah Lanjut Usia 2030</strong><span>Empat buku: Surakarta, Surabaya, Payakumbuh, Medan. SurveyMETER dan CAS UI</span></div></li>
+          </ol>
+          <p class="more"><a class="link" href="/publikasi/buku/">Semua buku</a></p>
+        </div>
+
+        <div class="ppanel" id="pp-brief" role="tabpanel" aria-labelledby="ptab-brief" hidden>
+          <ol class="list">
+            <li><span class="list__year">2024</span><div><strong>Mengangkat Kerja Layak bagi Lanjut Usia yang Menekuni Solusi Berbasis Alam di Indonesia</strong></div></li>
+            <li><span class="list__year">2020</span><div><strong>Saatnya Aktifkan Perubahan Perilaku Pemberian ASI dan Intervensi</strong></div></li>
+            <li><span class="list__year">2020</span><div><strong>Pandemi COVID-19 menjadi Momentum Mengubah Pola Asuh Balita</strong></div></li>
+            <li><span class="list__year">2020</span><div><strong>Gangguan Kesehatan Mental Meningkat Tajam di Masa Pandemi COVID-19?</strong></div></li>
+            <li><span class="list__year">2018</span><div><strong>Menggugah Lahirnya Kebijakan Kelanjutusiaan: Hasil Studi Demensia Bali 2018</strong></div></li>
+            <li><span class="list__year">2016</span><div><strong>Dua dari Sepuluh Lanjut Usia Mengalami Demensia Ketika Memasuki Umur 70 Tahun</strong></div></li>
+          </ol>
+          <p class="more"><a class="link" href="/publikasi/policy-brief/">Semua policy brief</a></p>
+        </div>
+
+        <div class="ppanel" id="pp-art" role="tabpanel" aria-labelledby="ptab-art" hidden>
+          <ol class="list">
+            <li><span class="list__year">2023</span><div><strong>Dampak Kematian dan Kehancuran Akibat Bencana terhadap Kesehatan dan Mortalitas dalam Jangka Panjang</strong></div></li>
+            <li><span class="list__year">2023</span><div><strong>Puskesmas Merespon Kebutuhan Perawatan Demensia</strong></div></li>
+            <li><span class="list__year">2023</span><div><strong>Evaluasi Perilaku Pencarian Pengobatan pada Lansia selama Pandemi COVID-19 di Bali dan Yogyakarta</strong></div></li>
+            <li><span class="list__year">2022</span><div><strong>Hasil Jangka Panjang Gangguan Stres Pascatrauma pada Korban Tsunami Samudera Hindia di Indonesia</strong></div></li>
+            <li><span class="list__year">2022</span><div><strong>Satu Dekade Mendorong Kebijakan Berbasis Bukti</strong></div></li>
+          </ol>
+          <p class="more"><a class="link" href="/publikasi/artikel/">Semua artikel</a></p>
+        </div>
+
+        <div class="ppanel" id="pp-rep" role="tabpanel" aria-labelledby="ptab-rep" hidden>
+          <ol class="list">
+            <li><span class="list__year">2023</span><div><strong>Laporan Studi Kesehatan dan Layanan Lanjut Usia di DIY</strong></div></li>
+            <li><span class="list__year">2023</span><div><strong>Laporan Studi Dukungan Keluarga dengan Anak Usia 0-36 Bulan Tahun 2022</strong></div></li>
+            <li><span class="list__year">2022</span><div><strong>Lembar Fakta: Warga Terlihat, Tercatat, dan Terlayani</strong></div></li>
+            <li><span class="list__year">2022</span><div><strong>Ketahanan Ekonomi dan Adopsi Digital di Kalangan Pengusaha Ultra-Mikro di Indonesia</strong></div></li>
+            <li><span class="list__year">2021</span><div><strong>Mengukur Kualitas Layanan Pendidikan Kementerian Agama</strong></div></li>
+            <li><span class="list__year">2018</span><div><strong>Buku Tahunan SurveyMETER 2018</strong></div></li>
+          </ol>
+          <p class="more"><a class="link" href="/publikasi/laporan-penelitian/">Semua laporan</a></p>
+        </div>
       </div>
     </section>
 
-    <section class="about" id="tentang" aria-labelledby="about-title">
+    <!-- Berita -->
+    <section class="section section--tint" id="berita" aria-labelledby="news-title">
       <div class="container">
-        <div class="about__intro">
-          <h2 id="about-title" data-i18n="about.title">Tentang SurveyMETER</h2>
-          <p data-i18n="about.p1">Nama kami singkatan dari Survey, Measurement, Training, and Research. Lembaga ini dibentuk oleh tim yang lebih dari 15 tahun mengelola pengumpulan data Indonesia Family Life Survey bersama RAND Corporation.</p>
-        </div>
-
-        <div class="about__grid">
+        <div class="head">
           <div>
-            <h3 class="about__label" data-i18n="leaders.title">Direktur eksekutif</h3>
-            <ul class="leaders">
-              <li><span class="avatar" aria-hidden="true">CS</span><div><strong>Dr. Cecep Sukria Sumantri</strong><span data-i18n="leaders.now">Sejak Februari 2024</span></div></li>
-              <li><span class="avatar" aria-hidden="true">NS</span><div><strong>Dr. Ir. Ni Wayan Suriastini, M.Phil</strong><span>2012 - 2024</span></div></li>
-              <li><span class="avatar" aria-hidden="true">BS</span><div><strong>Bondan S. Sikoki</strong><span>2002 - 2012</span></div></li>
+            <p class="eyebrow">Berita dan kegiatan</p>
+            <h2 id="news-title">Kabar terbaru</h2>
+          </div>
+          <a class="link" href="/berita/">Semua berita</a>
+        </div>
+        <div class="news">
+          <ol class="news__list"><li><time datetime="2024-10-14">14 Okt 2024</time><a href="/baca/studi-kualitatif-mengenai-persepsi-terhadap-pendidikan-seks-dan-kesehatan-reproduksi-remaj/">Studi Kualitatif mengenai Persepsi terhadap Pendidikan Seks dan Kesehatan Reproduksi Remaja di Yogyakarta Indonesia</a></li><li><time datetime="2024-10-04">4 Okt 2024</time><a href="/baca/diskusi-penyusunan-pedoman-gerakan-jogja-sapa-lansia-dinsosnakertrans-kota-yogyakarta/">Diskusi Penyusunan Pedoman Gerakan Jogja Sapa Lansia Dinsosnakertrans Kota Yogyakarta</a></li><li><time datetime="2024-07-17">17 Jul 2024</time><a href="/baca/covid-19-disruption-and-regional-development-small-island-economies/">COVID-19 DISRUPTION AND REGIONAL DEVELOPMENT IN SMALL ISLAND ECONOMIES</a></li><li><time datetime="2024-05-31">31 Mei 2024</time><a href="/baca/mengangkat-kerja-layak-bagi-lanjut-usia-yang-menekuni-solusi-berbasis-alam-di-indonesia/">Mengangkat kerja layak bagi lanjut usia yang menekuni solusi berbasis alam di Indonesia</a></li><li><time datetime="2024-05-15">15 Mei 2024</time><a href="/baca/aging-well-asia/">AGING WELL IN ASIA</a></li><li><time datetime="2024-05-09">9 Mei 2024</time><a href="/baca/lowongan-asisten-peneliti-lapangan-3/">Lowongan Asisten Peneliti Lapangan</a></li></ol>
+          <div class="news__photos">
+            <figure>
+              <img src="/assets/img/photo-pelatihan-semarang-2024.jpg" alt="Peserta pelatihan duduk di meja kelas, pemateri berdiri di depan layar presentasi" width="1000" height="534" loading="lazy">
+              <figcaption><time datetime="2024-02-24">24-26 Feb 2024</time> <span>Pelatihan petugas lapangan Studi Kesejahteraan Pengantin, Kota Semarang</span></figcaption>
+            </figure>
+            <figure>
+              <img src="/assets/img/photo-pelatihan-keluarga-2022.jpg" alt="Pemateri menyampaikan materi di depan layar bertuliskan Studi Program Dukungan Keluarga dengan Anak Usia 0-36 Bulan" width="1280" height="720" loading="lazy">
+              <figcaption><time datetime="2022-10-10">10-14 Okt 2022</time> <span>Pelatihan petugas lapangan Studi Program Dukungan Keluarga dengan Anak Usia 0-36 Bulan</span></figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mitra -->
+    <section class="section" id="mitra" aria-labelledby="partners-title">
+      <div class="container">
+        <div class="head">
+          <div>
+            <p class="eyebrow">Mitra kerja dan klien</p>
+            <h2 id="partners-title">37 lembaga yang pernah bekerja bersama kami</h2>
+          </div>
+        </div>
+        <div class="partners">
+          <div>
+            <h3>Pemerintah</h3>
+            <ul>
+              <li>Bappenas</li>
+              <li>TNP2K</li>
+              <li>Kementerian Kesehatan RI</li>
+              <li>Kementerian Pendidikan RI</li>
+              <li>Badan Nasional Penanggulangan Bencana</li>
             </ul>
           </div>
           <div>
-            <h3 class="about__label" data-i18n="tl.title">Perjalanan</h3>
-            <ol class="timeline">
-              <li><strong>2002</strong><p data-i18n="tl.1">Yayasan SurveyMETER berdiri di Yogyakarta pada 20 Februari.</p></li>
-              <li><strong>2011</strong><p data-i18n="tl.2">Menguatkan peran sebagai lembaga penelitian dan advokasi kebijakan publik.</p></li>
-              <li><strong>2020</strong><p data-i18n="tl.3">Menjadi PT SurveyMETER untuk memperluas kemitraan riset internasional.</p></li>
-            </ol>
+            <h3>Donor dan lembaga pembangunan</h3>
+            <ul>
+              <li>The World Bank</li>
+              <li>Asian Development Bank</li>
+              <li>UNICEF</li>
+              <li>UNDP</li>
+              <li>AusAID</li>
+              <li>PROSPERA</li>
+              <li>SUM2, USAID</li>
+              <li>Millennium Challenge Account Indonesia</li>
+            </ul>
           </div>
-        </div>
-
-        <div class="partners">
-          <h3 class="about__label" data-i18n="partners.title">Pernah bekerja bersama</h3>
-          <div class="partners__grid">
-            <div>
-              <h4 data-i18n="partners.g1">Donor dan multilateral</h4>
-              <p>The World Bank, Asian Development Bank, UNICEF, UNDP, AusAID / Prospera</p>
-            </div>
-            <div>
-              <h4 data-i18n="partners.g2">Riset dan universitas</h4>
-              <p>RAND Corporation, J-PAL, Innovations for Poverty Action, Duke University, Australian National University, University of Melbourne, University of Sydney, UCLA, Hitotsubashi University</p>
-            </div>
-            <div>
-              <h4 data-i18n="partners.g3">Pemerintah</h4>
-              <p>Bappenas, TNP2K, Kementerian Kesehatan, BNPB, Kementerian Pendidikan, Pemerintah Daerah DIY</p>
-            </div>
+          <div>
+            <h3>Universitas dan lembaga riset</h3>
+            <ul class="cols">
+              <li>RAND Corporation</li>
+              <li>J-PAL</li>
+              <li>Innovations for Poverty Action</li>
+              <li>Mathematica Policy Research</li>
+              <li>RTI International</li>
+              <li>IDinsight</li>
+              <li>Amsterdam Institute for International Development</li>
+              <li>Center for Aging Studies</li>
+              <li>Duke University</li>
+              <li>University of California, Los Angeles</li>
+              <li>University of North Carolina</li>
+              <li>Australian National University</li>
+              <li>University of Melbourne</li>
+              <li>University of Sydney</li>
+              <li>Monash University</li>
+              <li>Hitotsubashi University</li>
+              <li>PUSKAPA Universitas Indonesia</li>
+              <li>PSKK Universitas Gadjah Mada</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Organisasi masyarakat</h3>
+            <ul>
+              <li>The Asia Foundation</li>
+              <li>HelpAge International</li>
+              <li>Women's World Banking</li>
+              <li>GRM International</li>
+              <li>AKATIGA</li>
+              <li>Yayasan Emong Lansia</li>
+            </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="cta" id="kontak" aria-labelledby="cta-title">
+    <!-- Kontak -->
+    <section class="section section--flush" id="kontak" aria-labelledby="contact-title">
       <div class="container">
-        <div class="block block--cta">
-          <h2 id="cta-title" class="block__title" data-i18n="cta.title">Hubungi SurveyMETER</h2>
-          <p class="block__lead" data-i18n="cta.lead">Untuk kerja sama riset, pertanyaan soal data, atau publikasi, hubungi kantor kami di Yogyakarta.</p>
-          <ul class="contact">
-            <li><span>Email</span><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></li>
-            <li><span data-i18n="cta.phone">Telepon</span><a href="tel:+622744477464">+62 274 4477-464</a></li>
-            <li><span data-i18n="cta.office">Kantor</span><a href="https://www.google.com/maps/place/SurveyMETER/@-7.7595736,110.4185988,18z/data=!3m1!4b1!4m6!3m5!1s0x2e7a59844ecbebcb:0xacde1e1d920428f6!8m2!3d-7.7595736!4d110.4185988!16s%2Fg%2F1pzwxft90" target="_blank" rel="noopener"><address>Jl. Jenengan Raya No. 109, Maguwoharjo, Sleman, Yogyakarta</address></a></li>
-          </ul>
-          <div class="cta__actions">
-            <a class="btn btn--lime btn--lg" href="mailto:sm@surveymeter.org" data-i18n="cta.email">Kirim email</a>
-            <a class="btn btn--ghost btn--lg" href="https://www.google.com/maps/place/SurveyMETER/@-7.7595736,110.4185988,18z/data=!3m1!4b1!4m6!3m5!1s0x2e7a59844ecbebcb:0xacde1e1d920428f6!8m2!3d-7.7595736!4d110.4185988!16s%2Fg%2F1pzwxft90" rel="noopener" target="_blank" data-i18n="cta.map">Buka di peta</a>
+        <div class="block block--contact">
+          <div>
+            <p class="eyebrow eyebrow--light">Kontak</p>
+            <h2 id="contact-title" class="block__title">Hubungi SurveyMETER</h2>
+            <p class="block__lead">Untuk kerja sama riset, pertanyaan soal data, atau publikasi, hubungi kantor kami di Yogyakarta.</p>
+            <div class="contact__actions">
+              <a class="btn btn--lime btn--lg" href="mailto:sm@surveymeter.org">Kirim email</a>
+              <a class="btn btn--ghost btn--lg" href="https://www.google.com/maps/place/SurveyMETER/@-7.7595736,110.4185988,18z/data=!3m1!4b1!4m6!3m5!1s0x2e7a59844ecbebcb:0xacde1e1d920428f6!8m2!3d-7.7595736!4d110.4185988!16s%2Fg%2F1pzwxft90" target="_blank" rel="noopener">Buka di peta</a>
+            </div>
           </div>
+          <dl class="contact">
+            <div><dt>Kantor</dt><dd><address>Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282</address></dd></div>
+            <div><dt>Telepon</dt><dd><a href="tel:+622744477464">+62 274 4477-464</a></dd></div>
+            <div><dt>Faks</dt><dd>+62 274 4477-004</dd></div>
+            <div><dt>Email</dt><dd><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></dd></div>
+            <div><dt>Media sosial</dt><dd class="social">
+              <a href="https://www.facebook.com/Surveymeter/" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://x.com/SurveyMETER_Id" target="_blank" rel="noopener">X</a>
+              <a href="https://www.youtube.com/channel/UCVvz8wzl-kfUxsB4I0SIEpQ" target="_blank" rel="noopener">YouTube</a>
+              <a href="https://www.instagram.com/surveymeter/" target="_blank" rel="noopener">Instagram</a>
+            </dd></div>
+          </dl>
         </div>
       </div>
     </section>
-  </main>
+  
 
+  </main>
   <footer class="footer">
     <div class="container">
-      <div class="footer__grid">
+      <div class="footer__grid footer__grid--wide">
         <div class="footer__brand">
-          <img src="assets/img/surveymeter-logo.png" alt="SurveyMETER" width="168" height="31" loading="lazy">
-          <a href="https://www.google.com/maps/place/SurveyMETER/@-7.7595736,110.4185988,18z/data=!3m1!4b1!4m6!3m5!1s0x2e7a59844ecbebcb:0xacde1e1d920428f6!8m2!3d-7.7595736!4d110.4185988!16s%2Fg%2F1pzwxft90" target="_blank" rel="noopener"><address>Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282</address></a>
+          <img src="/assets/img/surveymeter-logo.png" alt="SurveyMETER" width="168" height="31" loading="lazy">
+          <p>Survey, Measurement, Training, and Research. Lembaga survei, pelatihan, dan penelitian sejak 2002.</p>
+          <address>Jl. Jenengan Raya No. 109, Maguwoharjo, Depok, Sleman, D.I. Yogyakarta 55282<br>
+          <a href="tel:+622744477464">+62 274 4477-464</a> &middot; <a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></address>
+          <p class="footer__social">
+            <a href="https://www.facebook.com/Surveymeter/" target="_blank" rel="noopener">Facebook</a>
+            <a href="https://x.com/SurveyMETER_Id" target="_blank" rel="noopener">X</a>
+            <a href="https://www.youtube.com/channel/UCVvz8wzl-kfUxsB4I0SIEpQ" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://www.instagram.com/surveymeter/" target="_blank" rel="noopener">Instagram</a>
+          </p>
         </div>
-        <div>
-          <h2 class="footer__head" data-i18n="footer.data">Data</h2>
-          <ul>
-            <li><a href="#data" data-i18n="nav.data">Data publik</a></li>
-            <li><a href="#publikasi" data-i18n="nav.pubs">Publikasi</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="footer__head" data-i18n="footer.org">Lembaga</h2>
-          <ul>
-            <li><a href="#tentang" data-i18n="nav.about">Tentang</a></li>
-            <li><a href="#kontak" data-i18n="nav.contact">Kontak</a></li>
-            <li><a href="https://x.com/SurveyMETER_Id" rel="noopener" target="_blank">X: @SurveyMETER_Id</a></li>
-            <li><a href="https://www.facebook.com/Surveymeter" rel="noopener" target="_blank">Facebook: Surveymeter</a></li>
-          </ul>
-        </div>
-        <div>
-          <h2 class="footer__head" data-i18n="footer.contact">Kontak</h2>
-          <ul>
-            <li><a href="mailto:sm@surveymeter.org">sm@surveymeter.org</a></li>
-            <li><a href="tel:+622744477464">+62 274 4477-464</a></li>
-            <li><span data-i18n="footer.fax">Faks</span> +62 274 4477-004</li>
-          </ul>
-        </div>
+        <div><h2 class="footer__head">Tentang</h2><ul><li><a href="/tentang/sasaran/">Sasaran dan lingkup kegiatan</a></li><li><a href="/tentang/mitra/">Mitra kerja dan klien</a></li><li><a href="/tentang/profil/">Profil lembaga</a></li><li><a href="/tentang/struktur/">Struktur organisasi</a></li><li><a href="/tentang/visi-misi/">Visi dan misi</a></li><li><a href="/tentang/kemampuan/">Kemampuan dan pengalaman</a></li></ul></div><div><h2 class="footer__head">Kegiatan</h2><ul><li><a href="/kegiatan/evaluasi-dampak/">Studi evaluasi dampak</a></li><li><a href="/kegiatan/studi-kebijakan/">Studi berorientasi kebijakan</a></li><li><a href="/kegiatan/pendampingan/">Pendampingan</a></li><li><a href="/kegiatan/pelatihan/">Pelatihan</a></li><li><a href="/kegiatan/pengelolaan-pengetahuan/">Pengelolaan pengetahuan</a></li><li><a href="/kegiatan/penelitian-ilmiah/">Penelitian ilmiah</a></li></ul></div><div><h2 class="footer__head">Publikasi</h2><ul><li><a href="/publikasi/">Semua publikasi</a></li><li><a href="/publikasi/working-paper/">Working paper</a></li><li><a href="/publikasi/policy-brief/">Policy brief</a></li><li><a href="/publikasi/buku/">Buku</a></li><li><a href="/data/ifls-east/">Sakertim (IFLS East)</a></li><li><a href="/data/star/">STAR</a></li></ul></div><div><h2 class="footer__head">Kelompok kerja</h2><ul><li><a href="/kelompok-kerja/lansia/survei/">Survei</a></li><li><a href="/kelompok-kerja/lansia/pendampingan/">Pendampingan</a></li><li><a href="/kelompok-kerja/lansia/publikasi/">Publikasi</a></li><li><a href="/kelompok-kerja/stunting/survei/">Survei</a></li><li><a href="/kegiatan/pendampingan/">Pendampingan</a></li><li><a href="/kelompok-kerja/stunting/publikasi/">Publikasi</a></li></ul></div>
       </div>
-      <p class="footer__fine">&copy; <span id="year">2026</span> PT SurveyMETER</p>
+      <p class="footer__fine">&copy; <span id="year">2026</span> PT SurveyMETER. Yayasan dikukuhkan dengan akta notaris 2009, tercatat di Kemenkumham RI. PT SurveyMETER sejak 2020.</p>
     </div>
   </footer>
-
-  <script src="main.js?v=8" defer></script>
+  <script src="/main.js?v=14" defer></script>
 </body>
 </html>
